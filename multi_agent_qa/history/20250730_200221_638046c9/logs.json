@@ -1,0 +1,93 @@
+[
+  {
+    "timestamp": "2025-07-30T20:02:08.727223",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 20:02:08] \"POST /api/start-test HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:16.530721",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 20:02:16] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:16.530721",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 20:02:16] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:19.975335",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 20:02:19] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:19.975335",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 20:02:19] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.331018",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Failed to parse plan response: Expecting value: line 1 column 1 (char 0)",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.331018",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Failed to parse plan response: Expecting value: line 1 column 1 (char 0)",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.331342",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Response was: ```json\n{\n    \"task_id\": \"test_wifi_settings_001\",\n    \"description\": \"Test the functionality of WiFi settings by navigating to the settings, locating the WiFi option, and toggling WiFi on and off.\",\n    \"subgoals\": [\n        {\n            \"id\": 1,\n            \"description\": \"Open the Settings app from the home screen.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Settings app icon\",\n            \"expected_outcome\": \"Settings app should open.\",\n            \"verification_criteria\": \"Verify that the Settings screen is displayed with the title 'Settings'.\",\n            \"dependencies\": []\n        },\n        {\n            \"id\": 2,\n            \"description\": \"Scroll to find the 'Network & internet' option.\",\n            \"action_type\": \"scroll\",\n            \"target_element\": \"Network & internet option\",\n            \"expected_outcome\": \"User is able to see the 'Network & internet' option.\",\n            \"verification_criteria\": \"Verify that 'Network & internet' is visible on the screen.\",\n            \"dependencies\": [1]\n        },\n        {\n            \"id\": 3,\n            \"description\": \"Tap on the 'Network & internet' option.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"'Network & internet' option\",\n            \"expected_outcome\": \"'Network & internet' settings should open.\",\n            \"verification_criteria\": \"Verify that the 'Network & internet' screen is displayed.\",\n            \"dependencies\": [2]\n        },\n        {\n            \"id\": 4,\n            \"description\": \"Locate the 'Wi-Fi' option in the 'Network & internet' settings.\",\n            \"action_type\": \"scroll\",\n            \"target_element\": \"'Wi-Fi' option\",\n            \"expected_outcome\": \"'Wi-Fi' option should be visible.\",\n            \"verification_criteria\": \"Verify that 'Wi-Fi' is visible and selectable.\",\n            \"dependencies\": [3]\n        },\n        {\n            \"id\": 5,\n            \"description\": \"Tap on the 'Wi-Fi' option to open Wi-Fi settings.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"'Wi-Fi' option\",\n            \"expected_outcome\": \"Wi-Fi settings screen should open.\",\n            \"verification_criteria\": \"Verify that the Wi-Fi settings screen is displayed with available networks.\",\n            \"dependencies\": [4]\n        },\n        {\n            \"id\": 6,\n            \"description\": \"Toggle the Wi-Fi switch to turn Wi-Fi off.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Wi-Fi toggle switch\",\n            \"expected_outcome\": \"Wi-Fi should be turned off.\",\n            \"verification_criteria\": \"Verify that the toggle switch is in the 'off' position and that the Wi-Fi status shows 'Off'.\",\n            \"dependencies\": [5]\n        },\n        {\n            \"id\": 7,\n            \"description\": \"Toggle the Wi-Fi switch to turn Wi-Fi on.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Wi-Fi toggle switch\",\n            \"expected_outcome\": \"Wi-Fi should be turned on.\",\n            \"verification_criteria\": \"Verify that the toggle switch is in the 'on' position and that the Wi-Fi status shows 'On'.\",\n            \"dependencies\": [6]\n        }\n    ],\n    \"success_criteria\": \"Wi-Fi can be successfully toggled on and off without errors, and the expected UI changes are correctly reflected.\",\n    \"estimated_steps\": 7\n}\n```",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.331342",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Response was: ```json\n{\n    \"task_id\": \"test_wifi_settings_001\",\n    \"description\": \"Test the functionality of WiFi settings by navigating to the settings, locating the WiFi option, and toggling WiFi on and off.\",\n    \"subgoals\": [\n        {\n            \"id\": 1,\n            \"description\": \"Open the Settings app from the home screen.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Settings app icon\",\n            \"expected_outcome\": \"Settings app should open.\",\n            \"verification_criteria\": \"Verify that the Settings screen is displayed with the title 'Settings'.\",\n            \"dependencies\": []\n        },\n        {\n            \"id\": 2,\n            \"description\": \"Scroll to find the 'Network & internet' option.\",\n            \"action_type\": \"scroll\",\n            \"target_element\": \"Network & internet option\",\n            \"expected_outcome\": \"User is able to see the 'Network & internet' option.\",\n            \"verification_criteria\": \"Verify that 'Network & internet' is visible on the screen.\",\n            \"dependencies\": [1]\n        },\n        {\n            \"id\": 3,\n            \"description\": \"Tap on the 'Network & internet' option.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"'Network & internet' option\",\n            \"expected_outcome\": \"'Network & internet' settings should open.\",\n            \"verification_criteria\": \"Verify that the 'Network & internet' screen is displayed.\",\n            \"dependencies\": [2]\n        },\n        {\n            \"id\": 4,\n            \"description\": \"Locate the 'Wi-Fi' option in the 'Network & internet' settings.\",\n            \"action_type\": \"scroll\",\n            \"target_element\": \"'Wi-Fi' option\",\n            \"expected_outcome\": \"'Wi-Fi' option should be visible.\",\n            \"verification_criteria\": \"Verify that 'Wi-Fi' is visible and selectable.\",\n            \"dependencies\": [3]\n        },\n        {\n            \"id\": 5,\n            \"description\": \"Tap on the 'Wi-Fi' option to open Wi-Fi settings.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"'Wi-Fi' option\",\n            \"expected_outcome\": \"Wi-Fi settings screen should open.\",\n            \"verification_criteria\": \"Verify that the Wi-Fi settings screen is displayed with available networks.\",\n            \"dependencies\": [4]\n        },\n        {\n            \"id\": 6,\n            \"description\": \"Toggle the Wi-Fi switch to turn Wi-Fi off.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Wi-Fi toggle switch\",\n            \"expected_outcome\": \"Wi-Fi should be turned off.\",\n            \"verification_criteria\": \"Verify that the toggle switch is in the 'off' position and that the Wi-Fi status shows 'Off'.\",\n            \"dependencies\": [5]\n        },\n        {\n            \"id\": 7,\n            \"description\": \"Toggle the Wi-Fi switch to turn Wi-Fi on.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Wi-Fi toggle switch\",\n            \"expected_outcome\": \"Wi-Fi should be turned on.\",\n            \"verification_criteria\": \"Verify that the toggle switch is in the 'on' position and that the Wi-Fi status shows 'On'.\",\n            \"dependencies\": [6]\n        }\n    ],\n    \"success_criteria\": \"Wi-Fi can be successfully toggled on and off without errors, and the expected UI changes are correctly reflected.\",\n    \"estimated_steps\": 7\n}\n```",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.332192",
+    "level": "WARNING",
+    "logger": "agents.planner_agent",
+    "message": "Creating fallback plan due to parsing failure",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.332192",
+    "level": "WARNING",
+    "logger": "agents.planner_agent",
+    "message": "Creating fallback plan due to parsing failure",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.332492",
+    "level": "WARNING",
+    "logger": "core.orchestrator",
+    "message": "No more executable subgoals found",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:21.332492",
+    "level": "WARNING",
+    "logger": "core.orchestrator",
+    "message": "No more executable subgoals found",
+    "agent": "system"
+  }
+]

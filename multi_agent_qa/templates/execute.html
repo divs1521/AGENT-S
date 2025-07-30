@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execute Tests - Multi-Agent QA System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .execution-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-card {
+            transition: all 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .agent-status-panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .agent-mini-card {
+            background: white;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .agent-mini-card.active {
+            border-left-color: #0d6efd;
+            background: #f8f9ff;
+        }
+        
+        .agent-mini-card.success {
+            border-left-color: #198754;
+            background: #f8fff8;
+        }
+        
+        .agent-mini-card.error {
+            border-left-color: #dc3545;
+            background: #fff8f8;
+        }
+        
+        .console-output {
+            background: #1e1e1e;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .console-output .log-info { color: #4fc3f7; }
+        .console-output .log-warning { color: #ffb74d; }
+        .console-output .log-error { color: #f44336; }
+        .console-output .log-success { color: #81c784; }
+        
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .execution-controls {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        
+        .running-indicator {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .task-preset {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .task-preset:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .task-preset.selected {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-robot me-2"></i>Multi-Agent QA System
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
+                <a class="nav-link" href="/setup"><i class="fas fa-cog me-1"></i>Setup</a>
+                <a class="nav-link active" href="/execute"><i class="fas fa-play me-1"></i>Execute</a>
+                <a class="nav-link" href="/history"><i class="fas fa-history me-1"></i>History</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="execution-container">
+            <div class="text-center mb-4">
+                <h1><i class="fas fa-play me-2"></i>Execute QA Tests</h1>
+                <p class="text-muted">Configure and run your multi-agent QA tests</p>
+            </div>
+
+            <div class="row">
+                <!-- Test Configuration Panel -->
+                <div class="col-md-4">
+                    <div class="card execution-controls">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-sliders-h me-2"></i>Test Configuration</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="testForm">
+                                <!-- Task Description -->
+                                <div class="mb-3">
+                                    <label for="taskDescription" class="form-label">Task Description</label>
+                                    <textarea class="form-control" id="taskDescription" rows="3" 
+                                              placeholder="Describe what you want to test...">Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off</textarea>
+                                </div>
+
+                                <!-- Task Presets -->
+                                <div class="mb-3">
+                                    <label class="form-label">Quick Presets</label>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="card task-preset" onclick="selectPreset('wifi')">
+                                                <div class="card-body p-2 text-center">
+                                                    <i class="fas fa-wifi mb-1"></i>
+                                                    <small>WiFi Settings</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card task-preset" onclick="selectPreset('alarm')">
+                                                <div class="card-body p-2 text-center">
+                                                    <i class="fas fa-clock mb-1"></i>
+                                                    <small>Create Alarm</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card task-preset" onclick="selectPreset('email')">
+                                                <div class="card-body p-2 text-center">
+                                                    <i class="fas fa-envelope mb-1"></i>
+                                                    <small>Email Search</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card task-preset" onclick="selectPreset('contacts')">
+                                                <div class="card-body p-2 text-center">
+                                                    <i class="fas fa-address-book mb-1"></i>
+                                                    <small>Add Contact</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Android Task -->
+                                <div class="mb-3">
+                                    <label for="androidTask" class="form-label">Android Task</label>
+                                    <select class="form-select" id="androidTask">
+                                        <option value="settings_wifi">Settings - WiFi</option>
+                                        <option value="clock_alarm">Clock - Alarm</option>
+                                        <option value="email_search">Email - Search</option>
+                                        <option value="contacts_add">Contacts - Add</option>
+                                        <option value="calendar_event">Calendar - Event</option>
+                                        <option value="notes_create">Notes - Create</option>
+                                        <option value="camera_photo">Camera - Photo</option>
+                                        <option value="browser_search">Browser - Search</option>
+                                    </select>
+                                </div>
+
+                                <!-- Environment -->
+                                <div class="mb-3">
+                                    <label class="form-label">Environment</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="environment" id="mockEnv" value="mock" checked>
+                                        <label class="form-check-label" for="mockEnv">
+                                            <i class="fas fa-flask me-1"></i>Mock Environment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="environment" id="realEnv" value="real">
+                                        <label class="form-check-label" for="realEnv">
+                                            <i class="fas fa-mobile-alt me-1"></i>Real Android Device
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Test Options -->
+                                <div class="mb-3">
+                                    <label class="form-label">Options</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="enableScreenshots" checked>
+                                        <label class="form-check-label" for="enableScreenshots">
+                                            Enable Screenshots
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="enableRecovery" checked>
+                                        <label class="form-check-label" for="enableRecovery">
+                                            Enable Error Recovery
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="verboseLogging">
+                                        <label class="form-check-label" for="verboseLogging">
+                                            Verbose Logging
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Execution Controls -->
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary" id="startButton">
+                                        <i class="fas fa-play me-2"></i>Start Test
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="stopButton" style="display: none;" onclick="stopTest()">
+                                        <i class="fas fa-stop me-2"></i>Stop Test
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Agent Status Panel -->
+                    <div class="agent-status-panel mt-3">
+                        <h6><i class="fas fa-users me-2"></i>Agent Status</h6>
+                        <div id="agentStatusList">
+                            <div class="agent-mini-card" id="mini-planner">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-brain me-2"></i>Planner</span>
+                                    <span class="badge bg-secondary">Idle</span>
+                                </div>
+                            </div>
+                            <div class="agent-mini-card" id="mini-executor">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-play me-2"></i>Executor</span>
+                                    <span class="badge bg-secondary">Idle</span>
+                                </div>
+                            </div>
+                            <div class="agent-mini-card" id="mini-verifier">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-check-circle me-2"></i>Verifier</span>
+                                    <span class="badge bg-secondary">Idle</span>
+                                </div>
+                            </div>
+                            <div class="agent-mini-card" id="mini-supervisor">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-user-tie me-2"></i>Supervisor</span>
+                                    <span class="badge bg-secondary">Idle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Execution Monitor Panel -->
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0"><i class="fas fa-terminal me-2"></i>Execution Monitor</h5>
+                            <div>
+                                <span id="executionStatus" class="badge bg-secondary">Ready</span>
+                                <span id="executionTime" class="text-muted ms-2">00:00</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- Progress Bar -->
+                            <div class="progress-container">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>Test Progress</small>
+                                    <small id="progressText">0%</small>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Console Output -->
+                            <div class="console-output" id="consoleOutput">
+                                <div class="log-info">Multi-Agent QA System Console</div>
+                                <div class="log-info">Ready to execute tests...</div>
+                                <div class="text-muted">Configure your test parameters and click "Start Test" to begin.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Results Panel -->
+                    <div class="card mt-3" id="resultsPanel" style="display: none;">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Test Results</h5>
+                        </div>
+                        <div class="card-body" id="resultsContent">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        // Initialize WebSocket connection
+        const socket = io();
+        let testRunning = false;
+        let startTime = null;
+        let timerInterval = null;
+
+        // Task presets
+        const taskPresets = {
+            wifi: {
+                description: "Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+                androidTask: "settings_wifi"
+            },
+            alarm: {
+                description: "Create a new alarm for 7:00 AM with custom label and sound",
+                androidTask: "clock_alarm"
+            },
+            email: {
+                description: "Search for emails containing 'meeting' keyword in inbox",
+                androidTask: "email_search"
+            },
+            contacts: {
+                description: "Add a new contact with name, phone number, and email address",
+                androidTask: "contacts_add"
+            }
+        };
+
+        // Socket event handlers
+        socket.on('connect', function() {
+            addConsoleLog('Connected to QA system server', 'success');
+        });
+
+        socket.on('log_update', function(logEntry) {
+            addConsoleLog(`[${logEntry.agent}] ${logEntry.message}`, getLogClass(logEntry.level));
+        });
+
+        socket.on('agent_status_update', function(data) {
+            updateAgentStatus(data);
+        });
+
+        socket.on('agent_activity', function(data) {
+            addAgentActivity(data);
+        });
+
+        socket.on('test_completed', function(data) {
+            handleTestCompleted(data);
+        });
+
+        socket.on('test_stopped', function() {
+            handleTestStopped();
+        });
+
+        // Functions
+        function selectPreset(presetName) {
+            // Remove previous selection
+            document.querySelectorAll('.task-preset').forEach(el => el.classList.remove('selected'));
+            
+            // Select current preset
+            event.target.closest('.task-preset').classList.add('selected');
+            
+            const preset = taskPresets[presetName];
+            if (preset) {
+                document.getElementById('taskDescription').value = preset.description;
+                document.getElementById('androidTask').value = preset.androidTask;
+            }
+        }
+
+        function startTest() {
+            if (testRunning) return;
+
+            const formData = {
+                task: document.getElementById('taskDescription').value,
+                android_task: document.getElementById('androidTask').value,
+                use_real_env: document.querySelector('input[name="environment"]:checked').value === 'real',
+                enable_screenshots: document.getElementById('enableScreenshots').checked,
+                enable_recovery: document.getElementById('enableRecovery').checked,
+                verbose_logging: document.getElementById('verboseLogging').checked
+            };
+
+            if (!formData.task.trim()) {
+                alert('Please enter a task description');
+                return;
+            }
+
+            testRunning = true;
+            startTime = Date.now();
+            
+            // Update UI
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('stopButton').style.display = 'block';
+            document.getElementById('executionStatus').textContent = 'Running';
+            document.getElementById('executionStatus').className = 'badge bg-primary running-indicator';
+            document.getElementById('resultsPanel').style.display = 'none';
+            
+            // Start timer
+            timerInterval = setInterval(updateTimer, 1000);
+            
+            // Clear console
+            document.getElementById('consoleOutput').innerHTML = '';
+            addConsoleLog('Starting QA test execution...', 'info');
+            addConsoleLog(`Task: ${formData.task}`, 'info');
+            addConsoleLog(`Environment: ${formData.use_real_env ? 'Real Android Device' : 'Mock Environment'}`, 'info');
+
+            // Send request to server
+            fetch('/api/start-test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    addConsoleLog(`Test started with episode ID: ${data.episode_id}`, 'success');
+                } else {
+                    addConsoleLog(`Failed to start test: ${data.error}`, 'error');
+                    handleTestStopped();
+                }
+            })
+            .catch(error => {
+                addConsoleLog(`Error starting test: ${error.message}`, 'error');
+                handleTestStopped();
+            });
+        }
+
+        function stopTest() {
+            if (!testRunning) return;
+
+            fetch('/api/stop-test', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                addConsoleLog('Stop request sent to server', 'warning');
+            })
+            .catch(error => {
+                addConsoleLog(`Error stopping test: ${error.message}`, 'error');
+            });
+        }
+
+        function handleTestCompleted(data) {
+            testRunning = false;
+            clearInterval(timerInterval);
+            
+            // Update UI
+            document.getElementById('startButton').style.display = 'block';
+            document.getElementById('stopButton').style.display = 'none';
+            document.getElementById('executionStatus').textContent = data.success ? 'Completed' : 'Failed';
+            document.getElementById('executionStatus').className = `badge bg-${data.success ? 'success' : 'danger'}`;
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('progressText').textContent = '100%';
+            
+            addConsoleLog(`Test completed. Success: ${data.success}`, data.success ? 'success' : 'error');
+            
+            if (data.results) {
+                showTestResults(data.results);
+            }
+        }
+
+        function handleTestStopped() {
+            testRunning = false;
+            clearInterval(timerInterval);
+            
+            // Update UI
+            document.getElementById('startButton').style.display = 'block';
+            document.getElementById('stopButton').style.display = 'none';
+            document.getElementById('executionStatus').textContent = 'Stopped';
+            document.getElementById('executionStatus').className = 'badge bg-warning';
+            
+            addConsoleLog('Test execution stopped', 'warning');
+        }
+
+        function updateAgentStatus(data) {
+            if (typeof data === 'object' && data.agent) {
+                // Single agent update
+                updateSingleAgentMini(data.agent, data.status);
+            } else {
+                // All agents update
+                for (const [agent, status] of Object.entries(data)) {
+                    updateSingleAgentMini(agent, status);
+                }
+            }
+        }
+
+        function updateSingleAgentMini(agent, status) {
+            const card = document.getElementById(`mini-${agent}`);
+            if (!card) return;
+            
+            const badge = card.querySelector('.badge');
+            
+            // Update badge
+            badge.textContent = status.status.charAt(0).toUpperCase() + status.status.slice(1);
+            badge.className = `badge bg-${getStatusColor(status.status)}`;
+            
+            // Update card class
+            card.className = `agent-mini-card ${getStatusClass(status.status)}`;
+        }
+
+        function addConsoleLog(message, type = 'info') {
+            const console = document.getElementById('consoleOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            const logLine = document.createElement('div');
+            logLine.className = `log-${type}`;
+            logLine.innerHTML = `<span class="text-muted">[${timestamp}]</span> ${message}`;
+            
+            console.appendChild(logLine);
+            console.scrollTop = console.scrollHeight;
+        }
+
+        function updateTimer() {
+            if (!startTime) return;
+            
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            
+            document.getElementById('executionTime').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function showTestResults(results) {
+            const panel = document.getElementById('resultsPanel');
+            const content = document.getElementById('resultsContent');
+            
+            content.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Summary</h6>
+                        <ul class="list-unstyled">
+                            <li><strong>Success:</strong> ${results.success ? 'Yes' : 'No'}</li>
+                            <li><strong>Final Score:</strong> ${results.final_score?.toFixed(2) || 'N/A'}</li>
+                            <li><strong>Duration:</strong> ${results.duration?.toFixed(1) || '0'}s</li>
+                            <li><strong>Steps Executed:</strong> ${results.executions?.length || 0}</li>
+                            <li><strong>Bugs Detected:</strong> ${results.bugs_detected?.length || 0}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Actions</h6>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary btn-sm" onclick="viewDetailedResults()">
+                                <i class="fas fa-chart-line me-1"></i>View Detailed Report
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="downloadResults()">
+                                <i class="fas fa-download me-1"></i>Download Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            panel.style.display = 'block';
+        }
+
+        function getLogClass(level) {
+            switch (level) {
+                case 'ERROR': return 'error';
+                case 'WARNING': return 'warning';
+                case 'INFO': return 'info';
+                case 'DEBUG': return 'info';
+                default: return 'info';
+            }
+        }
+
+        function getStatusColor(status) {
+            switch (status) {
+                case 'idle': return 'secondary';
+                case 'ready': return 'primary';
+                case 'planning': case 'executing': case 'verifying': case 'analyzing': return 'warning';
+                case 'completed': return 'success';
+                case 'error': return 'danger';
+                default: return 'secondary';
+            }
+        }
+
+        function getStatusClass(status) {
+            switch (status) {
+                case 'ready': case 'planning': case 'executing': case 'verifying': case 'analyzing': return 'active';
+                case 'completed': return 'success';
+                case 'error': return 'error';
+                default: return '';
+            }
+        }
+
+        function viewDetailedResults() {
+            window.location.href = '/history';
+        }
+
+        function downloadResults() {
+            // TODO: Implement results download
+            alert('Download functionality coming soon!');
+        }
+
+        // Agent Activity Dialog Functions
+        let agentActivities = [];
+
+        function addAgentActivity(data) {
+            agentActivities.push({
+                ...data,
+                id: Date.now() + Math.random()
+            });
+            
+            // Keep only last 50 activities
+            if (agentActivities.length > 50) {
+                agentActivities = agentActivities.slice(-50);
+            }
+            
+            updateAgentActivityDisplay();
+        }
+
+        function updateAgentActivityDisplay() {
+            const container = document.getElementById('agentActivityTimeline');
+            
+            if (agentActivities.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center text-muted p-4">
+                        <i class="fas fa-clock fa-2x mb-2"></i>
+                        <p>Waiting for agent activity...</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const html = agentActivities.slice().reverse().map(activity => {
+                const time = new Date(activity.timestamp * 1000).toLocaleTimeString();
+                const agentIcon = getAgentIcon(activity.agent);
+                const statusColor = getTimelineStatusColor(activity.status);
+                
+                return `
+                    <div class="timeline-item ${activity.agent} ${activity.status}">
+                        <div class="timeline-icon" style="background-color: ${statusColor}">
+                            <i class="${agentIcon}"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <span class="timeline-agent">${activity.agent}</span>
+                                <div>
+                                    <span class="timeline-status">${activity.status}</span>
+                                    <span class="timeline-time">${time}</span>
+                                </div>
+                            </div>
+                            <div class="timeline-message">${activity.message}</div>
+                            ${activity.decision ? `<div class="timeline-decision">🎯 ${activity.decision}</div>` : ''}
+                            <div class="progress progress-mini">
+                                <div class="progress-bar" style="width: ${activity.progress}%; background-color: ${statusColor}"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = html;
+            
+            // Auto-scroll to bottom
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function getAgentIcon(agent) {
+            switch (agent) {
+                case 'planner': return 'fas fa-brain';
+                case 'executor': return 'fas fa-play';
+                case 'verifier': return 'fas fa-check-circle';
+                case 'supervisor': return 'fas fa-eye';
+                default: return 'fas fa-robot';
+            }
+        }
+
+        function getTimelineStatusColor(status) {
+            switch (status) {
+                case 'planning': case 'ready': return '#0d6efd';
+                case 'executing': return '#198754';
+                case 'verifying': return '#ffc107';
+                case 'analyzing': return '#dc3545';
+                case 'completed': return '#198754';
+                case 'error': return '#dc3545';
+                default: return '#6c757d';
+            }
+        }
+
+        function clearAgentActivity() {
+            agentActivities = [];
+            updateAgentActivityDisplay();
+        }
+
+        // Form submission
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            startTest();
+        });
+
+        // Initialize
+        addConsoleLog('Execution interface loaded', 'success');
+    </script>
+
+    <!-- Agent Activity Dialog -->
+    <div class="modal fade" id="agentActivityModal" tabindex="-1" aria-labelledby="agentActivityModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agentActivityModalLabel">
+                        <i class="fas fa-robot me-2"></i>Agent Activity Monitor
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="agentActivityTimeline" class="timeline-container">
+                        <div class="text-center text-muted p-4">
+                            <i class="fas fa-clock fa-2x mb-2"></i>
+                            <p>Waiting for agent activity...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="clearAgentActivity()">
+                        <i class="fas fa-trash me-1"></i>Clear
+                    </button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Activity Monitor Button -->
+    <button type="button" class="btn btn-info position-fixed" 
+            style="bottom: 20px; right: 20px; z-index: 1000; border-radius: 50%; width: 60px; height: 60px;"
+            data-bs-toggle="modal" data-bs-target="#agentActivityModal"
+            title="View Agent Activity">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <style>
+        .timeline-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            border-left: 4px solid #dee2e6;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        .timeline-item.planner {
+            border-left-color: #0d6efd;
+            background: #f0f8ff;
+        }
+        
+        .timeline-item.executor {
+            border-left-color: #198754;
+            background: #f0fff0;
+        }
+        
+        .timeline-item.verifier {
+            border-left-color: #ffc107;
+            background: #fffdf0;
+        }
+        
+        .timeline-item.supervisor {
+            border-left-color: #dc3545;
+            background: #fff0f0;
+        }
+        
+        .timeline-item.error {
+            border-left-color: #dc3545;
+            background: #ffe6e6;
+        }
+        
+        .timeline-item.completed {
+            border-left-color: #198754;
+            background: #e6ffe6;
+        }
+        
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-agent {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        
+        .timeline-time {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .timeline-status {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: #e9ecef;
+            margin-left: 10px;
+        }
+        
+        .timeline-message {
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        
+        .timeline-decision {
+            font-size: 12px;
+            color: #6c757d;
+            font-style: italic;
+            background: #e9ecef;
+            padding: 5px 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+        
+        .progress-mini {
+            height: 4px;
+            margin-top: 5px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>

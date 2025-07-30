@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2025-07-30T19:58:54.433037",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Failed to parse plan response: Expecting value: line 1 column 1 (char 0)",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T19:58:54.433329",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Response was: Mock response from LLM agent",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T19:58:54.433574",
+    "level": "WARNING",
+    "logger": "agents.planner_agent",
+    "message": "Creating fallback plan due to parsing failure",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T19:58:54.433839",
+    "level": "WARNING",
+    "logger": "core.orchestrator",
+    "message": "No more executable subgoals found",
+    "agent": "system"
+  }
+]

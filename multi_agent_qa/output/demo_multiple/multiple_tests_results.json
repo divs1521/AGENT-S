@@ -1,0 +1,283 @@
+{
+  "total_scenarios": 3,
+  "episodes": [
+    {
+      "episode_id": "f537f131-3351-4a23-a543-01c3759fd93a",
+      "plan": {
+        "task_id": "fallback_plan",
+        "description": "Navigate to WiFi settings and toggle WiFi on/off",
+        "subgoals": [
+          {
+            "id": 1,
+            "description": "Navigate to app and prepare for: Navigate to WiFi settings and toggle WiFi on/off",
+            "action_type": "navigate",
+            "target_element": "app_home",
+            "expected_outcome": "App is ready for testing",
+            "verification_criteria": "App UI is loaded and responsive",
+            "dependencies": null
+          },
+          {
+            "id": 2,
+            "description": "Execute main task: Navigate to WiFi settings and toggle WiFi on/off",
+            "action_type": "tap",
+            "target_element": "main_action_element",
+            "expected_outcome": "Task action is performed",
+            "verification_criteria": "Expected UI change occurs",
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "id": 3,
+            "description": "Verify task completion",
+            "action_type": "verify",
+            "target_element": null,
+            "expected_outcome": "Task completed successfully",
+            "verification_criteria": "Success indicators are present",
+            "dependencies": [
+              2
+            ]
+          }
+        ],
+        "success_criteria": "Task completed without errors",
+        "estimated_steps": 3
+      },
+      "execution_results": [],
+      "verification_results": [],
+      "visual_trace": [],
+      "start_time": 1753881926.6037595,
+      "end_time": 1753881926.604235,
+      "overall_success": false,
+      "final_score": 0.0
+    },
+    {
+      "episode_id": "1e381957-8cab-40e8-b6f1-9453f3346993",
+      "plan": {
+        "task_id": "fallback_plan",
+        "description": "Create a new alarm for 7:00 AM with custom label",
+        "subgoals": [
+          {
+            "id": 1,
+            "description": "Navigate to app and prepare for: Create a new alarm for 7:00 AM with custom label",
+            "action_type": "navigate",
+            "target_element": "app_home",
+            "expected_outcome": "App is ready for testing",
+            "verification_criteria": "App UI is loaded and responsive",
+            "dependencies": null
+          },
+          {
+            "id": 2,
+            "description": "Execute main task: Create a new alarm for 7:00 AM with custom label",
+            "action_type": "tap",
+            "target_element": "main_action_element",
+            "expected_outcome": "Task action is performed",
+            "verification_criteria": "Expected UI change occurs",
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "id": 3,
+            "description": "Verify task completion",
+            "action_type": "verify",
+            "target_element": null,
+            "expected_outcome": "Task completed successfully",
+            "verification_criteria": "Success indicators are present",
+            "dependencies": [
+              2
+            ]
+          }
+        ],
+        "success_criteria": "Task completed without errors",
+        "estimated_steps": 3
+      },
+      "execution_results": [],
+      "verification_results": [],
+      "visual_trace": [],
+      "start_time": 1753881926.6049309,
+      "end_time": 1753881926.6055112,
+      "overall_success": false,
+      "final_score": 0.0
+    },
+    {
+      "episode_id": "e60c45f1-a7e9-4f3f-b723-e871b3d9951f",
+      "plan": {
+        "task_id": "fallback_plan",
+        "description": "Search for emails containing 'meeting' keyword",
+        "subgoals": [
+          {
+            "id": 1,
+            "description": "Navigate to app and prepare for: Search for emails containing 'meeting' keyword",
+            "action_type": "navigate",
+            "target_element": "app_home",
+            "expected_outcome": "App is ready for testing",
+            "verification_criteria": "App UI is loaded and responsive",
+            "dependencies": null
+          },
+          {
+            "id": 2,
+            "description": "Execute main task: Search for emails containing 'meeting' keyword",
+            "action_type": "tap",
+            "target_element": "main_action_element",
+            "expected_outcome": "Task action is performed",
+            "verification_criteria": "Expected UI change occurs",
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "id": 3,
+            "description": "Verify task completion",
+            "action_type": "verify",
+            "target_element": null,
+            "expected_outcome": "Task completed successfully",
+            "verification_criteria": "Success indicators are present",
+            "dependencies": [
+              2
+            ]
+          }
+        ],
+        "success_criteria": "Task completed without errors",
+        "estimated_steps": 3
+      },
+      "execution_results": [],
+      "verification_results": [],
+      "visual_trace": [],
+      "start_time": 1753881926.6063848,
+      "end_time": 1753881926.6067226,
+      "overall_success": false,
+      "final_score": 0.0
+    }
+  ],
+  "analyses": [
+    {
+      "episode_id": "f537f131-3351-4a23-a543-01c3759fd93a",
+      "overall_assessment": "Fallback analysis due to parsing failure",
+      "bug_detection_accuracy": 0.5,
+      "agent_recovery_ability": 0.0,
+      "test_coverage_score": 0.5,
+      "prompt_improvement_suggestions": [
+        "Manual review recommended due to analysis failure"
+      ],
+      "plan_quality_feedback": [
+        "Review planning approach"
+      ],
+      "execution_quality_feedback": [
+        "Review execution accuracy"
+      ],
+      "verification_quality_feedback": [
+        "Review verification criteria"
+      ],
+      "recommended_test_expansions": [
+        "Consider additional test scenarios"
+      ],
+      "critical_issues": [
+        "Analysis parsing failed - manual review needed"
+      ],
+      "strengths": [
+        "System completed test execution"
+      ],
+      "timestamp": 1753881926.604901
+    },
+    {
+      "episode_id": "1e381957-8cab-40e8-b6f1-9453f3346993",
+      "overall_assessment": "Fallback analysis due to parsing failure",
+      "bug_detection_accuracy": 0.5,
+      "agent_recovery_ability": 0.0,
+      "test_coverage_score": 0.5,
+      "prompt_improvement_suggestions": [
+        "Manual review recommended due to analysis failure"
+      ],
+      "plan_quality_feedback": [
+        "Review planning approach"
+      ],
+      "execution_quality_feedback": [
+        "Review execution accuracy"
+      ],
+      "verification_quality_feedback": [
+        "Review verification criteria"
+      ],
+      "recommended_test_expansions": [
+        "Consider additional test scenarios"
+      ],
+      "critical_issues": [
+        "Analysis parsing failed - manual review needed"
+      ],
+      "strengths": [
+        "System completed test execution"
+      ],
+      "timestamp": 1753881926.6063435
+    },
+    {
+      "episode_id": "e60c45f1-a7e9-4f3f-b723-e871b3d9951f",
+      "overall_assessment": "Fallback analysis due to parsing failure",
+      "bug_detection_accuracy": 0.5,
+      "agent_recovery_ability": 0.0,
+      "test_coverage_score": 0.5,
+      "prompt_improvement_suggestions": [
+        "Manual review recommended due to analysis failure"
+      ],
+      "plan_quality_feedback": [
+        "Review planning approach"
+      ],
+      "execution_quality_feedback": [
+        "Review execution accuracy"
+      ],
+      "verification_quality_feedback": [
+        "Review verification criteria"
+      ],
+      "recommended_test_expansions": [
+        "Consider additional test scenarios"
+      ],
+      "critical_issues": [
+        "Analysis parsing failed - manual review needed"
+      ],
+      "strengths": [
+        "System completed test execution"
+      ],
+      "timestamp": 1753881926.607443
+    }
+  ],
+  "comprehensive_report": {
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "Mock response from LLM agent"
+  },
+  "system_status": {
+    "total_episodes": 3,
+    "current_episode": "e60c45f1-a7e9-4f3f-b723-e871b3d9951f",
+    "agent_status": {
+      "planner": {
+        "status": "no_plan",
+        "total_steps": 0,
+        "completed_steps": 0
+      },
+      "executor": {
+        "total_executions": 0,
+        "success_rate": 0.0
+      },
+      "verifier": {
+        "total_verifications": 0,
+        "success_rate": 0.0,
+        "average_confidence": 0.0,
+        "total_issues": 0
+      },
+      "supervisor": {
+        "total_analyses": 0,
+        "average_scores": {},
+        "trends": "insufficient_data"
+      }
+    },
+    "recent_performance": {
+      "recent_success_rate": 0.0,
+      "average_score": 0.0,
+      "average_duration": 0.00046451886494954425,
+      "episodes_analyzed": 3
+    },
+    "system_health": "poor"
+  },
+  "summary": {
+    "success_rate": 0.0,
+    "average_score": 0.0,
+    "total_execution_time": 0.0013935565948486328
+  }
+}

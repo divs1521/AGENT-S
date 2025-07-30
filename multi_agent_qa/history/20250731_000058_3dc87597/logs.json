@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2025-07-31T00:00:30.789106",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [31/Jul/2025 00:00:30] \"POST /api/start-test HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T00:00:58.623872",
+    "level": "ERROR",
+    "logger": "core.orchestrator",
+    "message": "Error during QA test execution: 'VerifierAgent' object has no attribute 'verify_step'",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T00:00:58.623872",
+    "level": "ERROR",
+    "logger": "core.orchestrator",
+    "message": "Error during QA test execution: 'VerifierAgent' object has no attribute 'verify_step'",
+    "agent": "system"
+  }
+]

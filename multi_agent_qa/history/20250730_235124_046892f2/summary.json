@@ -1,0 +1,11 @@
+{
+  "episode_id": "046892f2-0328-4537-b71d-db1c14455267",
+  "timestamp": "20250730_235124",
+  "task": "Search for emails containing 'meeting' keyword in inbox",
+  "success": true,
+  "score": 0.9800000000000001,
+  "duration": 44.33820033073425,
+  "steps_executed": 6,
+  "bugs_found": 0,
+  "folder": "20250730_235124_046892f2"
+}

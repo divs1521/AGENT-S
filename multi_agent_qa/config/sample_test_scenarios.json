@@ -1,0 +1,50 @@
+[
+  {
+    "name": "WiFi Settings Test",
+    "task_description": "Test navigation to WiFi settings and toggle WiFi on/off",
+    "app_context": {
+      "android_task": "settings_wifi",
+      "expected_elements": [
+        "wifi_toggle",
+        "wifi_settings",
+        "network_list"
+      ]
+    },
+    "test_config": {
+      "max_steps": 15,
+      "timeout": 180
+    }
+  },
+  {
+    "name": "Clock Alarm Test",
+    "task_description": "Test creating and configuring a new alarm",
+    "app_context": {
+      "android_task": "clock_alarm",
+      "expected_elements": [
+        "add_alarm",
+        "time_picker",
+        "alarm_list"
+      ]
+    },
+    "test_config": {
+      "max_steps": 20,
+      "timeout": 240
+    }
+  },
+  {
+    "name": "Email Search Test",
+    "task_description": "Test searching for specific emails in the email app",
+    "app_context": {
+      "android_task": "email_search",
+      "expected_elements": [
+        "search_bar",
+        "email_list",
+        "compose_button"
+      ]
+    },
+    "test_config": {
+      "max_steps": 12,
+      "timeout": 150
+    }
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "timestamp": "2025-07-30T22:24:44.111070",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 0.2s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:24:44.647968",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 0.9s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:24:45.766326",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 2.9s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:24:48.967249",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 5.6s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:24:54.900673",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 1.0s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:24:56.168700",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 18.4s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:14.873507",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 28.8s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:28.060101",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:28] \"GET /socket.io/?EIO=4&transport=websocket&sid=FyNzCIggAGjwRMzTAAAE HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:28.073888",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:28] \"GET /setup HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:32.468779",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:32] \"GET /execute HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:32.719855",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:32] \"GET /socket.io/?EIO=4&transport=polling&t=PXSGhMK HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:32.813906",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:32] \"POST /socket.io/?EIO=4&transport=polling&t=PXSGhPn&sid=uTN5t9hBW8xmgeXqAAAG HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:33.032812",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:33] \"GET /socket.io/?EIO=4&transport=polling&t=PXSGhPo&sid=uTN5t9hBW8xmgeXqAAAG HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:33.039000",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:33] \"GET /socket.io/?EIO=4&transport=polling&t=PXSGhUj&sid=uTN5t9hBW8xmgeXqAAAG HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:39.830766",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:39] \"GET /socket.io/?EIO=4&transport=websocket&sid=uTN5t9hBW8xmgeXqAAAG HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:40.152395",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:40] \"GET / HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:40.412096",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:40] \"GET /socket.io/?EIO=4&transport=polling&t=PXSGjE9 HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:40.489472",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:40] \"POST /socket.io/?EIO=4&transport=polling&t=PXSGjH-&sid=oSlNBOPkRG9Bhl3mAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:40.721108",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:40] \"GET /socket.io/?EIO=4&transport=polling&t=PXSGjH_&sid=oSlNBOPkRG9Bhl3mAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:40.727711",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:40] \"POST /socket.io/?EIO=4&transport=polling&t=PXSGjMq&sid=oSlNBOPkRG9Bhl3mAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:41.031307",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:25:41] \"GET /socket.io/?EIO=4&transport=polling&t=PXSGjMs&sid=oSlNBOPkRG9Bhl3mAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:44.184517",
+    "level": "ERROR",
+    "logger": "backoff",
+    "message": "Giving up generate(...) after 8 tries (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:25:44.184638",
+    "level": "ERROR",
+    "logger": "core.orchestrator",
+    "message": "Error during QA test execution: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-jW9z8***************************************5XeP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+    "agent": "system"
+  }
+]

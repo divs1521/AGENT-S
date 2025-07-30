@@ -1,0 +1,113 @@
+{
+  "episode": {
+    "episode_id": "c42a92f8-3590-4939-9be3-095bef7dbf1a",
+    "plan": {
+      "task_id": "fallback_plan",
+      "description": "Test login functionality",
+      "subgoals": [
+        {
+          "id": 1,
+          "description": "Navigate to app and prepare for: Test login functionality",
+          "action_type": "navigate",
+          "target_element": "app_home",
+          "expected_outcome": "App is ready for testing",
+          "verification_criteria": "App UI is loaded and responsive",
+          "dependencies": null
+        },
+        {
+          "id": 2,
+          "description": "Execute main task: Test login functionality",
+          "action_type": "tap",
+          "target_element": "main_action_element",
+          "expected_outcome": "Task action is performed",
+          "verification_criteria": "Expected UI change occurs",
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "description": "Verify task completion",
+          "action_type": "verify",
+          "target_element": null,
+          "expected_outcome": "Task completed successfully",
+          "verification_criteria": "Success indicators are present",
+          "dependencies": [
+            2
+          ]
+        }
+      ],
+      "success_criteria": "Task completed without errors",
+      "estimated_steps": 3
+    },
+    "execution_results": [],
+    "verification_results": [],
+    "visual_trace": [],
+    "start_time": 1753881916.0718193,
+    "end_time": 1753881916.072459,
+    "overall_success": false,
+    "final_score": 0.0
+  },
+  "analysis": {
+    "episode_id": "c42a92f8-3590-4939-9be3-095bef7dbf1a",
+    "overall_assessment": "Fallback analysis due to parsing failure",
+    "bug_detection_accuracy": 0.5,
+    "agent_recovery_ability": 0.0,
+    "test_coverage_score": 0.5,
+    "prompt_improvement_suggestions": [
+      "Manual review recommended due to analysis failure"
+    ],
+    "plan_quality_feedback": [
+      "Review planning approach"
+    ],
+    "execution_quality_feedback": [
+      "Review execution accuracy"
+    ],
+    "verification_quality_feedback": [
+      "Review verification criteria"
+    ],
+    "recommended_test_expansions": [
+      "Consider additional test scenarios"
+    ],
+    "critical_issues": [
+      "Analysis parsing failed - manual review needed"
+    ],
+    "strengths": [
+      "System completed test execution"
+    ],
+    "timestamp": 1753881916.0734956
+  },
+  "system_status": {
+    "total_episodes": 1,
+    "current_episode": "c42a92f8-3590-4939-9be3-095bef7dbf1a",
+    "agent_status": {
+      "planner": {
+        "status": "no_plan",
+        "total_steps": 0,
+        "completed_steps": 0
+      },
+      "executor": {
+        "total_executions": 0,
+        "success_rate": 0.0
+      },
+      "verifier": {
+        "total_verifications": 0,
+        "success_rate": 0.0,
+        "average_confidence": 0.0,
+        "total_issues": 0
+      },
+      "supervisor": {
+        "total_analyses": 0,
+        "average_scores": {},
+        "trends": "insufficient_data"
+      }
+    },
+    "recent_performance": {
+      "recent_success_rate": 0.0,
+      "average_score": 0.0,
+      "average_duration": 0.0006396770477294922,
+      "episodes_analyzed": 1
+    },
+    "system_health": "poor"
+  }
+}

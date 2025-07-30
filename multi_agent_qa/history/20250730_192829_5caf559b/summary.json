@@ -1,0 +1,11 @@
+{
+  "episode_id": "5caf559b-0078-442d-9bdd-ebfdbaa838d8",
+  "timestamp": "20250730_192829",
+  "task": "Demo test - Check WiFi settings functionality",
+  "success": false,
+  "score": 0.0,
+  "duration": 0.0,
+  "steps_executed": 0,
+  "bugs_found": 0,
+  "folder": "20250730_192829_5caf559b"
+}

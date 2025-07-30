@@ -1,0 +1,79 @@
+[
+  {
+    "timestamp": "2025-07-30T22:55:46.315754",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:55:46] \"POST /api/start-test HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:55:46.315754",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:55:46] \"POST /api/start-test HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:25.164965",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:25] \"GET /socket.io/?EIO=4&transport=websocket&sid=IN8X6MyXnRxuNjcFAAAE HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:25.164965",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:25] \"GET /socket.io/?EIO=4&transport=websocket&sid=IN8X6MyXnRxuNjcFAAAE HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:25.164965",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:25] \"GET /socket.io/?EIO=4&transport=websocket&sid=IN8X6MyXnRxuNjcFAAAE HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:25.195473",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:25] \"GET /history HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:25.195473",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:25] \"GET /history HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:25.195473",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:25] \"GET /history HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:27.894200",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:27] \"GET /api/history/20250730_225623_1d906856/details HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:27.894200",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:27] \"GET /api/history/20250730_225623_1d906856/details HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:56:27.894200",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:56:27] \"GET /api/history/20250730_225623_1d906856/details HTTP/1.1\" 200 -",
+    "agent": "system"
+  }
+]

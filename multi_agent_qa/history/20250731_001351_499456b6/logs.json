@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-07-31T00:13:51.807102",
+    "level": "ERROR",
+    "logger": "core.orchestrator",
+    "message": "Error during QA test execution: 'QAPlan' object has no attribute 'goal_summary'",
+    "agent": "system"
+  }
+]

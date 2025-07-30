@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2025-07-30T20:02:06.234833",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 20:02:06] \"POST /api/stop-test HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:08.581382",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Failed to parse plan response: Expecting value: line 1 column 1 (char 0)",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:08.581644",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Response was: ```json\n{\n    \"task_id\": \"test_wifi_settings_001\",\n    \"description\": \"Test the WiFi settings functionality by navigating to the settings menu, locating the WiFi option, and toggling WiFi on and off.\",\n    \"subgoals\": [\n        {\n            \"id\": 1,\n            \"description\": \"Open the Settings application from the home screen.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Settings app icon\",\n            \"expected_outcome\": \"Settings application opens successfully.\",\n            \"verification_criteria\": \"Verify the presence of 'Settings' title or header on the screen.\",\n            \"dependencies\": []\n        },\n        {\n            \"id\": 2,\n            \"description\": \"Scroll to locate WiFi option in Settings.\",\n            \"action_type\": \"scroll\",\n            \"target_element\": \"WiFi option in Settings\",\n            \"expected_outcome\": \"WiFi option is visible on the screen.\",\n            \"verification_criteria\": \"Confirm that 'WiFi' is listed in the settings options.\",\n            \"dependencies\": [1]\n        },\n        {\n            \"id\": 3,\n            \"description\": \"Tap on the WiFi option to open WiFi settings.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"WiFi option\",\n            \"expected_outcome\": \"WiFi settings page opens with toggle switch.\",\n            \"verification_criteria\": \"Check for the presence of the WiFi toggle switch on the WiFi settings page.\",\n            \"dependencies\": [2]\n        },\n        {\n            \"id\": 4,\n            \"description\": \"Toggle the WiFi switch to turn WiFi on.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"WiFi toggle switch\",\n            \"expected_outcome\": \"WiFi is turned on.\",\n            \"verification_criteria\": \"Check that WiFi toggle is switched to 'On' and the status indicates connected networks, if available.\",\n            \"dependencies\": [3]\n        },\n        {\n            \"id\": 5,\n            \"description\": \"Wait for a brief moment to ensure the toggle action is processed.\",\n            \"action_type\": \"wait\",\n            \"target_element\": null,\n            \"expected_outcome\": \"System processes the toggle action.\",\n            \"verification_criteria\": \"N/A\",\n            \"dependencies\": [4]\n        },\n        {\n            \"id\": 6,\n            \"description\": \"Toggle the WiFi switch to turn WiFi off.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"WiFi toggle switch\",\n            \"expected_outcome\": \"WiFi is turned off.\",\n            \"verification_criteria\": \"Check that WiFi toggle is switched to 'Off' and the status reflects no connection.\",\n            \"dependencies\": [5]\n        },\n        {\n            \"id\": 7,\n            \"description\": \"Wait for a brief moment to ensure the toggle action is processed.\",\n            \"action_type\": \"wait\",\n            \"target_element\": null,\n            \"expected_outcome\": \"System processes the toggle action.\",\n            \"verification_criteria\": \"N/A\",\n            \"dependencies\": [6]\n        }\n    ],\n    \"success_criteria\": \"WiFi can be toggled on and off successfully without errors, and the UI reflects the current state appropriately.\",\n    \"estimated_steps\": 7\n}\n```",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:08.582608",
+    "level": "WARNING",
+    "logger": "agents.planner_agent",
+    "message": "Creating fallback plan due to parsing failure",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:02:08.582968",
+    "level": "WARNING",
+    "logger": "core.orchestrator",
+    "message": "No more executable subgoals found",
+    "agent": "system"
+  }
+]

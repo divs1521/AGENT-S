@@ -1,0 +1,16 @@
+{
+  "episode_id": "c8d5474e-19a4-4f43-a159-ce70c05fc31c",
+  "success": false,
+  "final_score": 0.0,
+  "duration": 60.8463671207428,
+  "executions": [],
+  "verifications": [],
+  "bugs_detected": [],
+  "plan": {
+    "task_id": "failed",
+    "description": "Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+    "subgoals": [],
+    "success_criteria": "Test failed",
+    "estimated_steps": 0
+  }
+}

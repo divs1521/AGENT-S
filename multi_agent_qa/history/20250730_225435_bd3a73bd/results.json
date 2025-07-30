@@ -1,0 +1,485 @@
+{
+  "episode_id": "bd3a73bd-5780-4cfc-8b12-5bb0d0cb8462",
+  "success": true,
+  "final_score": 0.9800000000000001,
+  "duration": 42.5711464881897,
+  "executions": [
+    {
+      "success": true,
+      "step_id": 1,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896245.637592
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896250.4914076,
+        "execution_step": 0
+      },
+      "error_message": null,
+      "execution_time": 4.853801012039185,
+      "screenshot_path": null,
+      "subgoal_description": "Open the Settings application"
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896250.4914868
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "button",
+            "text": "Home",
+            "bounds": [
+              50,
+              100,
+              150,
+              150
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Knowledge Test App",
+            "bounds": [
+              200,
+              50,
+              600,
+              100
+            ]
+          },
+          {
+            "type": "edittext",
+            "hint": "Enter your question",
+            "bounds": [
+              100,
+              300,
+              900,
+              400
+            ]
+          },
+          {
+            "type": "button",
+            "text": "Submit",
+            "bounds": [
+              400,
+              450,
+              600,
+              500
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896254.8140142,
+        "execution_step": 1
+      },
+      "error_message": null,
+      "execution_time": 4.3225226402282715,
+      "screenshot_path": null,
+      "subgoal_description": "Scroll down to find the WiFi option"
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896254.8140843
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896258.7246568,
+        "execution_step": 2
+      },
+      "error_message": null,
+      "execution_time": 3.9105682373046875,
+      "screenshot_path": null,
+      "subgoal_description": "Tap on the WiFi option"
+    },
+    {
+      "success": true,
+      "step_id": 4,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896258.7247238
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896262.840834,
+        "execution_step": 3
+      },
+      "error_message": null,
+      "execution_time": 4.116106271743774,
+      "screenshot_path": null,
+      "subgoal_description": "Toggle WiFi off if it is currently on"
+    },
+    {
+      "success": true,
+      "step_id": 5,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896262.8408828
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896266.3363793,
+        "execution_step": 4
+      },
+      "error_message": null,
+      "execution_time": 3.4954934120178223,
+      "screenshot_path": null,
+      "subgoal_description": "Verify WiFi is turned off"
+    },
+    {
+      "success": true,
+      "step_id": 6,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896266.3364344
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896270.9315722,
+        "execution_step": 5
+      },
+      "error_message": null,
+      "execution_time": 4.5951337814331055,
+      "screenshot_path": null,
+      "subgoal_description": "Toggle WiFi on"
+    },
+    {
+      "success": true,
+      "step_id": 7,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896270.9316275
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753896275.0989473,
+        "execution_step": 6
+      },
+      "error_message": null,
+      "execution_time": 4.167316675186157,
+      "screenshot_path": null,
+      "subgoal_description": "Verify WiFi is turned on"
+    }
+  ],
+  "verifications": [
+    {
+      "success": true,
+      "step_id": 1,
+      "verification_type": "mock_verification",
+      "expected_state": "The Settings application opens successfully.",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896250.4914706
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "verification_type": "mock_verification",
+      "expected_state": "The WiFi option is visible on the screen.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896254.81407
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "verification_type": "mock_verification",
+      "expected_state": "The WiFi settings screen opens.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896258.7247126
+    },
+    {
+      "success": true,
+      "step_id": 4,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi is turned off.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896262.840872
+    },
+    {
+      "success": true,
+      "step_id": 5,
+      "verification_type": "mock_verification",
+      "expected_state": "The WiFi status shows 'WiFi Off'.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896266.336424
+    },
+    {
+      "success": true,
+      "step_id": 6,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi is turned on.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896270.931616
+    },
+    {
+      "success": true,
+      "step_id": 7,
+      "verification_type": "mock_verification",
+      "expected_state": "The WiFi status shows 'WiFi On'.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753896275.098991
+    }
+  ],
+  "bugs_detected": [],
+  "plan": {
+    "task_id": "test_wifi_settings_001",
+    "description": "Test the WiFi settings by navigating to the settings menu, locating the WiFi option, and toggling WiFi on and off.",
+    "subgoals": [
+      {
+        "id": 1,
+        "description": "Open the Settings application",
+        "action_type": "tap",
+        "target_element": "Settings app icon",
+        "expected_outcome": "The Settings application opens successfully.",
+        "verification_criteria": "Check if the Settings screen is displayed.",
+        "dependencies": []
+      },
+      {
+        "id": 2,
+        "description": "Scroll down to find the WiFi option",
+        "action_type": "scroll",
+        "target_element": "WiFi option in Settings",
+        "expected_outcome": "The WiFi option is visible on the screen.",
+        "verification_criteria": "Verify that the WiFi option is displayed and clickable.",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Tap on the WiFi option",
+        "action_type": "tap",
+        "target_element": "WiFi option",
+        "expected_outcome": "The WiFi settings screen opens.",
+        "verification_criteria": "Check that the WiFi settings screen is displayed.",
+        "dependencies": [
+          2
+        ]
+      },
+      {
+        "id": 4,
+        "description": "Toggle WiFi off if it is currently on",
+        "action_type": "tap",
+        "target_element": "WiFi toggle switch",
+        "expected_outcome": "WiFi is turned off.",
+        "verification_criteria": "Check that the toggle switch is in the off position and WiFi is disabled.",
+        "dependencies": [
+          3
+        ]
+      },
+      {
+        "id": 5,
+        "description": "Verify WiFi is turned off",
+        "action_type": "verify",
+        "target_element": "WiFi status indicator",
+        "expected_outcome": "The WiFi status shows 'WiFi Off'.",
+        "verification_criteria": "Confirm that the status indicator reflects that WiFi is off.",
+        "dependencies": [
+          4
+        ]
+      },
+      {
+        "id": 6,
+        "description": "Toggle WiFi on",
+        "action_type": "tap",
+        "target_element": "WiFi toggle switch",
+        "expected_outcome": "WiFi is turned on.",
+        "verification_criteria": "Check that the toggle switch is in the on position and WiFi is enabled.",
+        "dependencies": [
+          5
+        ]
+      },
+      {
+        "id": 7,
+        "description": "Verify WiFi is turned on",
+        "action_type": "verify",
+        "target_element": "WiFi status indicator",
+        "expected_outcome": "The WiFi status shows 'WiFi On'.",
+        "verification_criteria": "Confirm that the status indicator reflects that WiFi is on.",
+        "dependencies": [
+          6
+        ]
+      }
+    ],
+    "success_criteria": "WiFi settings have been toggled successfully on and off with correct status updates.",
+    "estimated_steps": 7
+  }
+}

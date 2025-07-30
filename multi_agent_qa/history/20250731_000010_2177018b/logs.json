@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-07-31T00:00:10.746655",
+    "level": "ERROR",
+    "logger": "core.orchestrator",
+    "message": "Error during QA test execution: 'VerifierAgent' object has no attribute 'verify_step'",
+    "agent": "system"
+  }
+]
