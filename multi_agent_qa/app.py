@@ -42,6 +42,7 @@ class AppState:
         self.api_keys: Dict[str, str] = {}
         self.test_running = False
         self.current_episode_id = None
+        self.demo_progress = {}
 
 def load_api_keys():
     """Load API keys from config file on startup."""
@@ -364,6 +365,13 @@ def execute_page():
         return redirect(url_for('setup'))
     return render_template('execute.html')
 
+@app.route('/android-wild')
+def android_wild_page():
+    """Android in the Wild integration page."""
+    if not session.get('api_keys_configured') and not any(app_state.api_keys.values()):
+        return redirect(url_for('setup'))
+    return render_template('android_wild.html')
+
 @app.route('/api/start-test', methods=['POST'])
 def start_test():
     """Start a QA test execution."""
@@ -405,6 +413,8 @@ def start_test():
             # Create status update callback
             def status_update_callback(agent_name: str, status: str, progress: int = 0, message: str = "", decision: str = ""):
                 """Callback to update agent status in real-time."""
+                print(f"🤖 Agent status update: {agent_name} -> {status} ({progress}%) | {message[:50]}...")  # Debug output
+                
                 if agent_name in app_state.agent_status:
                     app_state.agent_status[agent_name]['status'] = status
                     app_state.agent_status[agent_name]['progress'] = progress
@@ -412,21 +422,29 @@ def start_test():
                     app_state.agent_status[agent_name]['decision'] = decision[:150] if decision else ""
                     
                     # Emit to frontend
-                    socketio.emit('agent_status_update', {
-                        'agent': agent_name,
-                        'status': app_state.agent_status[agent_name],
-                        'timestamp': time.time()
-                    })
+                    try:
+                        socketio.emit('agent_status_update', {
+                            'agent': agent_name,
+                            'status': app_state.agent_status[agent_name],
+                            'timestamp': time.time()
+                        })
+                        print(f"✅ Emitted agent status update for {agent_name}")  # Debug output
+                    except Exception as e:
+                        print(f"❌ Failed to emit agent status: {e}")  # Debug output
                     
                     # Emit detailed agent activity for dialog box
-                    socketio.emit('agent_activity', {
-                        'agent': agent_name,
-                        'status': status,
-                        'progress': progress,
-                        'message': message,
-                        'decision': decision,
-                        'timestamp': time.time()
-                    })
+                    try:
+                        socketio.emit('agent_activity', {
+                            'agent': agent_name,
+                            'status': status,
+                            'progress': progress,
+                            'message': message,
+                            'decision': decision,
+                            'timestamp': time.time()
+                        })
+                        print(f"✅ Emitted agent activity for {agent_name}")  # Debug output
+                    except Exception as e:
+                        print(f"❌ Failed to emit agent activity: {e}")  # Debug output
             
             config = QASystemConfig(
                 engine_params={'mock': use_mock},
@@ -448,7 +466,7 @@ def start_test():
             results = orchestrator.run_qa_test(task)
             
             # Get the episode_id from results
-            episode_id = results.episode_id if hasattr(results, 'episode_id') else app_state.current_episode_id
+            episode_id = getattr(results, 'episode_id', app_state.current_episode_id)
             
             # Save to history
             results_dict = safe_dataclass_to_dict({
@@ -490,6 +508,272 @@ def start_test():
     thread.start()
     
     return jsonify({'success': True, 'episode_id': app_state.current_episode_id})
+
+@app.route('/api/start-android-wild-demo', methods=['POST'])
+def start_android_wild_demo():
+    """Start Android in the Wild dataset demo."""
+    if app_state.test_running:
+        return jsonify({'error': 'Demo already running'}), 400
+    
+    data = request.get_json()
+    num_videos = data.get('num_videos', 3)
+    enable_enhanced_training = data.get('enable_enhanced_training', True)
+    enable_video_reproduction = data.get('enable_video_reproduction', True)
+    
+    # Check if API keys are available
+    if not any(app_state.api_keys.values()):
+        load_api_keys()  # Try to load from file
+    
+    # Reset state
+    app_state.test_running = True
+    app_state.current_logs = []
+    app_state.current_episode_id = str(uuid.uuid4())
+    
+    for agent in app_state.agent_status:
+        app_state.agent_status[agent] = {'status': 'ready', 'last_action': None, 'progress': 0}
+    
+    # Start demo in background thread
+    def run_android_wild_demo():
+        with app.app_context():
+            try:
+                # Import android_in_the_wild modules
+                from bonus.android_in_the_wild.dataset_processor import AndroidInTheWildProcessor
+                from bonus.android_in_the_wild.video_reproduction import VideoReproductionEngine
+                from bonus.android_in_the_wild.enhanced_training import create_comprehensive_training_dataset
+                
+                # Create status update callback
+                def status_update_callback(agent_name: str, status: str, progress: int = 0, message: str = "", decision: str = ""):
+                    """Callback to update agent status in real-time."""
+                    with app.app_context():
+                        if agent_name in app_state.agent_status:
+                            app_state.agent_status[agent_name]['status'] = status
+                            app_state.agent_status[agent_name]['progress'] = progress
+                            app_state.agent_status[agent_name]['last_action'] = message[:100] if message else ""
+                            app_state.agent_status[agent_name]['decision'] = decision[:150] if decision else ""
+                            
+                            # Emit to frontend
+                            socketio.emit('agent_status_update', {
+                                'agent': agent_name,
+                                'status': app_state.agent_status[agent_name],
+                                'timestamp': time.time()
+                            })
+                            
+                            # Emit detailed agent activity
+                            socketio.emit('agent_activity', {
+                                'agent': agent_name,
+                                'status': status,
+                                'progress': progress,
+                                'message': message,
+                                'decision': decision,
+                                'timestamp': time.time()
+                            })
+                
+                # Emit demo progress updates
+                def emit_demo_progress(step: str, message: str, progress: int = 0):
+                    print(f"🚀 Emitting progress: {step} - {message} ({progress}%)")  # Debug output
+                    
+                    # Store progress in app state for polling fallback
+                    app_state.demo_progress = {
+                        'step': step,
+                        'message': message,
+                        'progress': progress,
+                        'timestamp': time.time()
+                    }
+                    
+                    # Try multiple ways to emit the event
+                    try:
+                        # Method 1: Direct emit without app context
+                        socketio.emit('android_wild_progress', {
+                            'step': step,
+                            'message': message,
+                            'progress': progress,
+                            'timestamp': time.time()
+                        })
+                        print(f"✅ Direct emit successful for {step}")
+                    except Exception as e:
+                        print(f"❌ Direct emit failed: {e}")
+                    
+                    try:
+                        # Method 2: Emit with app context
+                        with app.app_context():
+                            socketio.emit('android_wild_progress', {
+                                'step': step,
+                                'message': message,
+                                'progress': progress,
+                                'timestamp': time.time()
+                            })
+                            print(f"✅ Context emit successful for {step}")
+                    except Exception as e:
+                        print(f"❌ Context emit failed: {e}")
+                
+                # Step 1: Initialize Dataset Processor
+                emit_demo_progress('dataset_init', 'Initializing Android in the Wild dataset processor...', 10)
+                
+                processor = AndroidInTheWildProcessor(
+                    dataset_url="https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+                    local_cache_dir="datasets/android_in_the_wild"
+                )
+                
+                # Get dataset stats
+                dataset_stats = processor.get_dataset_stats()
+                emit_demo_progress('dataset_stats', f'Dataset loaded: {dataset_stats.get("total_episodes", "Unknown")} episodes', 20)
+                
+                # Step 2: Download sample videos
+                emit_demo_progress('video_download', f'Downloading {num_videos} sample videos...', 30)
+                sample_videos = processor.download_sample_videos(num_videos)
+                
+                emit_demo_progress('video_downloaded', f'Downloaded {len(sample_videos)} videos successfully', 40)
+                
+                # Step 3: Enhanced Training (if enabled)
+                training_results = None
+                if enable_enhanced_training:
+                    emit_demo_progress('enhanced_training', 'Creating enhanced training dataset for all agents...', 50)
+                    
+                    training_results = create_comprehensive_training_dataset(
+                        processor, num_episodes=num_videos
+                    )
+                    
+                    # Calculate total training points across all agents
+                    total_training_points = 0
+                    if training_results:
+                        for agent_type, data_points in training_results.items():
+                            total_training_points += len(data_points)
+                    
+                    emit_demo_progress('training_complete', f'Generated {total_training_points} training points', 70)
+                
+                # Step 4: Video Reproduction (if enabled)
+                reproduction_results = None
+                if enable_video_reproduction:
+                    emit_demo_progress('video_reproduction', 'Setting up video reproduction engine...', 80)
+                    
+                    use_mock = not any(app_state.api_keys.values())
+                    config = QASystemConfig(
+                        engine_params={'mock': use_mock},
+                        android_env=None,
+                        max_execution_time=300.0,
+                        enable_visual_trace=True,
+                        enable_recovery=True,
+                        verification_strictness='balanced'
+                    )
+                    
+                    orchestrator = MultiAgentQAOrchestrator(config, status_callback=status_update_callback)
+                    
+                    # Create video reproduction engine
+                    reproduction_engine = VideoReproductionEngine(orchestrator)
+                    
+                    # Run reproduction on first video
+                    if sample_videos:
+                        first_video = sample_videos[0]
+                        video_id = first_video.get('id', first_video.get('path', 'unknown'))[:8]
+                        emit_demo_progress('reproducing_video', f'Reproducing video: {video_id}...', 90)
+                        
+                        reproduction_results = reproduction_engine.reproduce_video_sequence(
+                            first_video,
+                            use_enhanced_training=enable_enhanced_training,
+                            real_time_updates=True
+                        )
+                        
+                        emit_demo_progress('reproduction_complete', 'Video reproduction completed successfully', 95)
+                
+                # Compile final results
+                # Convert training results to JSON-serializable format
+                serializable_training_results = {}
+                if training_results:
+                    for agent_type, data_points in training_results.items():
+                        serializable_training_results[agent_type] = []
+                        for point in data_points:
+                            if hasattr(point, '__dict__'):
+                                # Convert dataclass to dict
+                                serializable_training_results[agent_type].append({
+                                    'episode_id': getattr(point, 'episode_id', 'unknown'),
+                                    'agent_type': getattr(point, 'agent_type', agent_type),
+                                    'difficulty': getattr(point, 'difficulty', 'medium'),
+                                    'input_summary': str(getattr(point, 'input_data', {}))[:100] + '...' if getattr(point, 'input_data', {}) else 'N/A',
+                                    'target_summary': str(getattr(point, 'target_output', {}))[:100] + '...' if getattr(point, 'target_output', {}) else 'N/A',
+                                    'metadata': getattr(point, 'metadata', {})
+                                })
+                            else:
+                                serializable_training_results[agent_type].append(str(point))
+                
+                # Convert reproduction results to JSON-serializable format
+                serializable_reproduction_results = None
+                if reproduction_results and hasattr(reproduction_results, '__dict__'):
+                    serializable_reproduction_results = {
+                        'original_video': getattr(reproduction_results, 'original_video', 'unknown'),
+                        'generated_task': getattr(reproduction_results, 'generated_task', 'unknown'),
+                        'agent_actions': getattr(reproduction_results, 'agent_actions', []),
+                        'execution_success': getattr(reproduction_results, 'execution_success', False),
+                        'performance_metrics': getattr(reproduction_results, 'performance_metrics', {}),
+                        'comparison_summary': str(getattr(reproduction_results, 'comparison_result', {}))[:200] + '...' if getattr(reproduction_results, 'comparison_result', {}) else 'N/A'
+                    }
+                else:
+                    serializable_reproduction_results = str(reproduction_results) if reproduction_results else None
+                
+                final_results = {
+                    'success': True,
+                    'dataset_stats': dataset_stats,
+                    'sample_videos': sample_videos,
+                    'training_results': serializable_training_results,
+                    'reproduction_results': serializable_reproduction_results,
+                    'episode_id': app_state.current_episode_id,
+                    'timestamp': time.time()
+                }
+                
+                # Save to history
+                history_folder = save_execution_to_history(
+                    app_state.current_episode_id,
+                    f"Android in the Wild Demo - {num_videos} videos",
+                    final_results
+                )
+                
+                # Update state
+                app_state.test_running = False
+                
+                # Notify frontend
+                emit_demo_progress('demo_complete', 'Android in the Wild demo completed successfully!', 100)
+                
+                # Store completion status
+                app_state.demo_progress['completed'] = True
+                app_state.demo_progress['results'] = final_results
+                
+                # Try multiple methods to notify completion
+                try:
+                    socketio.emit('android_wild_completed', {
+                        'success': True,
+                        'results': final_results,
+                        'history_folder': history_folder
+                    })
+                    print("✅ Completion event emitted successfully")
+                except Exception as e:
+                    print(f"❌ Completion event emit failed: {e}")
+                
+            except Exception as e:
+                app_state.test_running = False
+                import traceback
+                logging.error(f"Android Wild demo failed: {e}")
+                logging.error(f"Error type: {type(e).__name__}")
+                logging.error(f"Full traceback: {traceback.format_exc()}")
+                with app.app_context():
+                    socketio.emit('android_wild_completed', {
+                        'success': False,
+                        'error': str(e),
+                        'error_type': type(e).__name__
+                    })
+    
+    thread = threading.Thread(target=run_android_wild_demo)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({'success': True, 'episode_id': app_state.current_episode_id})
+
+@app.route('/api/demo-progress')
+def get_demo_progress():
+    """Get current demo progress (polling fallback)."""
+    return jsonify({
+        'progress': getattr(app_state, 'demo_progress', {}),
+        'test_running': app_state.test_running,
+        'agent_status': app_state.agent_status
+    })
 
 @app.route('/api/stop-test', methods=['POST'])
 def stop_test():

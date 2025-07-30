@@ -113,6 +113,7 @@
                 <a class="nav-link" href="/"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
                 <a class="nav-link" href="/setup"><i class="fas fa-cog me-1"></i>Setup</a>
                 <a class="nav-link active" href="/execute"><i class="fas fa-play me-1"></i>Execute</a>
+                <a class="nav-link" href="/android-wild"><i class="fas fa-android me-1"></i>Android Wild</a>
                 <a class="nav-link" href="/history"><i class="fas fa-history me-1"></i>History</a>
             </div>
         </div>
@@ -442,6 +443,8 @@
             .then(data => {
                 if (data.success) {
                     addConsoleLog(`Test started with episode ID: ${data.episode_id}`, 'success');
+                    // Start polling for agent status updates
+                    startStatusPolling();
                 } else {
                     addConsoleLog(`Failed to start test: ${data.error}`, 'error');
                     handleTestStopped();
@@ -471,6 +474,7 @@
         function handleTestCompleted(data) {
             testRunning = false;
             clearInterval(timerInterval);
+            stopStatusPolling(); // Stop polling when test completes
             
             // Update UI
             document.getElementById('startButton').style.display = 'block';
@@ -490,6 +494,7 @@
         function handleTestStopped() {
             testRunning = false;
             clearInterval(timerInterval);
+            stopStatusPolling(); // Stop polling when test stops
             
             // Update UI
             document.getElementById('startButton').style.display = 'block';
@@ -501,9 +506,12 @@
         }
 
         function updateAgentStatus(data) {
+            console.log('📊 Agent status update received:', data); // Debug log
+            
             if (typeof data === 'object' && data.agent) {
                 // Single agent update
                 updateSingleAgentMini(data.agent, data.status);
+                addConsoleLog(`Agent ${data.agent}: ${data.status.status}`, 'info');
             } else {
                 // All agents update
                 for (const [agent, status] of Object.entries(data)) {
@@ -716,6 +724,39 @@
             e.preventDefault();
             startTest();
         });
+
+        // Status polling functions
+        let statusPollingInterval = null;
+        
+        function startStatusPolling() {
+            // Poll every 2 seconds for agent status updates
+            statusPollingInterval = setInterval(() => {
+                if (testRunning) {
+                    pollAgentStatus();
+                } else {
+                    stopStatusPolling();
+                }
+            }, 2000);
+        }
+        
+        function stopStatusPolling() {
+            if (statusPollingInterval) {
+                clearInterval(statusPollingInterval);
+                statusPollingInterval = null;
+            }
+        }
+        
+        function pollAgentStatus() {
+            fetch('/api/agent-status')
+                .then(response => response.json())
+                .then(data => {
+                    // Update agent status directly
+                    updateAgentStatus(data);
+                })
+                .catch(error => {
+                    console.log('Polling failed:', error);
+                });
+        }
 
         // Initialize
         addConsoleLog('Execution interface loaded', 'success');
