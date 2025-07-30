@@ -1,0 +1,163 @@
+[
+  {
+    "timestamp": "2025-07-30T22:41:30.371900",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 0.1s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:30.980669",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 0.4s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:31.660318",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 0.2s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:32.170941",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 2.4s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:34.832086",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 8.4s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:37.507774",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:37] \"GET /socket.io/?EIO=4&transport=websocket&sid=dCRFG7tpNmEHhisIAAAG HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:37.524717",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:37] \"GET /setup HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:43.489217",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 5.3s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:43.603404",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:43] \"POST /api/test-keys HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:44.999750",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:44] \"GET /execute HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:45.340243",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:45] \"GET /socket.io/?EIO=4&transport=polling&t=PXSKOnw HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:45.604282",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:45] \"POST /socket.io/?EIO=4&transport=polling&t=PXSKOs_&sid=vOZFdMvYccM3ikxPAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:45.651628",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:45] \"GET /socket.io/?EIO=4&transport=polling&t=PXSKOs_.0&sid=vOZFdMvYccM3ikxPAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:45.658221",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:45] \"GET /socket.io/?EIO=4&transport=polling&t=PXSKOxu&sid=vOZFdMvYccM3ikxPAAAI HTTP/1.1\" 200 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:48.438226",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:48] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:49.015676",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 12.3s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:56.243864",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:56] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:41:58.514089",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:41:58] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:42:00.114649",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:42:00] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:42:01.394877",
+    "level": "INFO",
+    "logger": "werkzeug",
+    "message": "127.0.0.1 - - [30/Jul/2025 22:42:01] \"\u001b[31m\u001b[1mPOST /api/start-test HTTP/1.1\u001b[0m\" 400 -",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:42:01.631963",
+    "level": "INFO",
+    "logger": "backoff",
+    "message": "Backing off generate(...) for 27.9s (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:42:30.067431",
+    "level": "ERROR",
+    "logger": "backoff",
+    "message": "Giving up generate(...) after 9 tries (openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}})",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-30T22:42:30.067551",
+    "level": "ERROR",
+    "logger": "core.orchestrator",
+    "message": "Error during QA test execution: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ghp_SRZR****************************TWLP. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+    "agent": "system"
+  }
+]

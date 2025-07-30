@@ -1,0 +1,49 @@
+{
+  "episode_id": "0d96427d-946b-4461-8739-c851ea4c2fe1",
+  "plan": {
+    "task_id": "fallback_plan",
+    "description": "Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+    "subgoals": [
+      {
+        "id": 1,
+        "description": "Navigate to app and prepare for: Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+        "action_type": "navigate",
+        "target_element": "app_home",
+        "expected_outcome": "App is ready for testing",
+        "verification_criteria": "App UI is loaded and responsive",
+        "dependencies": null
+      },
+      {
+        "id": 2,
+        "description": "Execute main task: Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+        "action_type": "tap",
+        "target_element": "main_action_element",
+        "expected_outcome": "Task action is performed",
+        "verification_criteria": "Expected UI change occurs",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Verify task completion",
+        "action_type": "verify",
+        "target_element": null,
+        "expected_outcome": "Task completed successfully",
+        "verification_criteria": "Success indicators are present",
+        "dependencies": [
+          2
+        ]
+      }
+    ],
+    "success_criteria": "Task completed without errors",
+    "estimated_steps": 3
+  },
+  "execution_results": [],
+  "verification_results": [],
+  "visual_trace": [],
+  "start_time": 1753884012.6200662,
+  "end_time": 1753884012.6222432,
+  "overall_success": false,
+  "final_score": 0.0
+}

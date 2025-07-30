@@ -1,0 +1,1 @@
+{"episode_id": "aitw_sample_003", "task_description": "Search for emails containing 'meeting' in Gmail", "app_package": "com.google.android.gm", "duration_seconds": 18.5, "num_actions": 7, "device_model": "Samsung Galaxy S21", "android_version": "11", "screen_resolution": [1440, 3200], "complexity": "hard"}

@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "total_videos_processed": 3,
+    "successful_reproductions": 3,
+    "success_rate": 1.0,
+    "average_accuracy": 0.0,
+    "average_robustness": 0.0,
+    "average_generalization": 0.0
+  },
+  "failure_analysis": {
+    "common_failure_types": {
+      "sequence_length_mismatch": 3
+    },
+    "most_challenging_videos": [
+      {
+        "video": "datasets\\android_in_the_wild\\videos\\episode_001_settings_wifi.mp4",
+        "accuracy": 0.0,
+        "issues": 1
+      },
+      {
+        "video": "datasets\\android_in_the_wild\\videos\\episode_002_camera_photo.mp4",
+        "accuracy": 0.0,
+        "issues": 1
+      },
+      {
+        "video": "datasets\\android_in_the_wild\\videos\\episode_003_contacts_add.mp4",
+        "accuracy": 0.0,
+        "issues": 1
+      }
+    ]
+  },
+  "performance_trends": {
+    "accuracy_distribution": {
+      "excellent": 0.0,
+      "good": 0.0,
+      "fair": 0.0,
+      "poor": 1.0
+    },
+    "execution_time_stats": {
+      "average": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "median": 0.0
+    }
+  },
+  "recommendations": [
+    "Overall accuracy below threshold - consider retraining Planner Agent",
+    "Critical accuracy issues - review entire agent coordination pipeline"
+  ],
+  "detailed_results": [
+    {
+      "video": "datasets\\android_in_the_wild\\videos\\episode_001_settings_wifi.mp4",
+      "task": "Test turning Wi-Fi on and verify network list appears",
+      "accuracy": 0.0,
+      "success": true
+    },
+    {
+      "video": "datasets\\android_in_the_wild\\videos\\episode_002_camera_photo.mp4",
+      "task": "Test turning Wi-Fi on and verify network list appears",
+      "accuracy": 0.0,
+      "success": true
+    },
+    {
+      "video": "datasets\\android_in_the_wild\\videos\\episode_003_contacts_add.mp4",
+      "task": "Test turning Wi-Fi on and verify network list appears",
+      "accuracy": 0.0,
+      "success": true
+    }
+  ]
+}

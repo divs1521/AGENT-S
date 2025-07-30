@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2025-07-30T20:16:12.690318",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Failed to parse plan response: Expecting value: line 1 column 1 (char 0)",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:16:12.690570",
+    "level": "ERROR",
+    "logger": "agents.planner_agent",
+    "message": "Response was: ```json\n{\n    \"task_id\": \"test_wifi_settings_001\",\n    \"description\": \"Test the functionality of toggling WiFi settings on an Android device.\",\n    \"subgoals\": [\n        {\n            \"id\": 1,\n            \"description\": \"Open the Settings app.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"Settings app icon\",\n            \"expected_outcome\": \"The Settings app opens and displays the main settings menu.\",\n            \"verification_criteria\": \"Check if the Settings app's main menu is displayed.\",\n            \"dependencies\": []\n        },\n        {\n            \"id\": 2,\n            \"description\": \"Scroll to find the WiFi option in the settings.\",\n            \"action_type\": \"scroll\",\n            \"target_element\": \"WiFi option in the Settings menu\",\n            \"expected_outcome\": \"The WiFi option is visible on the screen.\",\n            \"verification_criteria\": \"Confirm that the WiFi option is present and clickable.\",\n            \"dependencies\": [1]\n        },\n        {\n            \"id\": 3,\n            \"description\": \"Tap on the WiFi option.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"WiFi option\",\n            \"expected_outcome\": \"The WiFi settings page opens.\",\n            \"verification_criteria\": \"Check if the WiFi settings page is displayed.\",\n            \"dependencies\": [2]\n        },\n        {\n            \"id\": 4,\n            \"description\": \"Verify the current state of WiFi toggle.\",\n            \"action_type\": \"verify\",\n            \"target_element\": \"WiFi toggle switch\",\n            \"expected_outcome\": \"The WiFi toggle switch is visible.\",\n            \"verification_criteria\": \"Confirm the visibility of the toggle switch and its current state (on/off).\",\n            \"dependencies\": [3]\n        },\n        {\n            \"id\": 5,\n            \"description\": \"Toggle WiFi off if it is currently on.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"WiFi toggle switch\",\n            \"expected_outcome\": \"WiFi is turned off.\",\n            \"verification_criteria\": \"Check that the toggle switch reflects the 'off' state and WiFi is disabled.\",\n            \"dependencies\": [4]\n        },\n        {\n            \"id\": 6,\n            \"description\": \"Wait for a few seconds to ensure the state change is processed.\",\n            \"action_type\": \"wait\",\n            \"target_element\": null,\n            \"expected_outcome\": \"The system processes the change in WiFi state.\",\n            \"verification_criteria\": \"No errors or unexpected behavior occurs during the wait.\",\n            \"dependencies\": [5]\n        },\n        {\n            \"id\": 7,\n            \"description\": \"Toggle WiFi on.\",\n            \"action_type\": \"tap\",\n            \"target_element\": \"WiFi toggle switch\",\n            \"expected_outcome\": \"WiFi is turned on.\",\n            \"verification_criteria\": \"Check that the toggle switch reflects the 'on' state and WiFi is enabled.\",\n            \"dependencies\": [6]\n        },\n        {\n            \"id\": 8,\n            \"description\": \"Verify that WiFi is connected to a network.\",\n            \"action_type\": \"verify\",\n            \"target_element\": \"Connected WiFi network name\",\n            \"expected_outcome\": \"The device is connected to a WiFi network.\",\n            \"verification_criteria\": \"Confirm that a network name is displayed and the connection is successful.\",\n            \"dependencies\": [7]\n        }\n    ],\n    \"success_criteria\": \"WiFi can be toggled on and off successfully, with correct feedback in the UI for each action.\",\n    \"estimated_steps\": 8\n}\n```",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:16:12.691413",
+    "level": "WARNING",
+    "logger": "agents.planner_agent",
+    "message": "Creating fallback plan due to parsing failure",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-30T20:16:12.691693",
+    "level": "WARNING",
+    "logger": "core.orchestrator",
+    "message": "No more executable subgoals found",
+    "agent": "system"
+  }
+]

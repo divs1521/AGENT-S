@@ -1,0 +1,31 @@
+{
+  "system": {
+    "name": "Multi-Agent QA System with Agent-S and Android World",
+    "version": "1.0.0",
+    "integration_mode": "full"
+  },
+  "agent_s": {
+    "enabled": true,
+    "fallback_to_mock": true,
+    "engine_config": {
+      "model": "gpt-4o-mini",
+      "temperature": 0.7,
+      "max_tokens": 1000
+    }
+  },
+  "android_world": {
+    "enabled": true,
+    "fallback_to_mock": true,
+    "environment_config": {
+      "device_id": "emulator-5554",
+      "task_timeout": 60,
+      "screenshot_frequency": 1.0
+    }
+  },
+  "qa_system": {
+    "max_execution_time": 300,
+    "max_retries": 3,
+    "enable_visual_trace": true,
+    "verification_strictness": "balanced"
+  }
+}

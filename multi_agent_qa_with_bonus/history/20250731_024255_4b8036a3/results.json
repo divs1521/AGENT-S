@@ -1,0 +1,57 @@
+{
+  "success": true,
+  "dataset_stats": {
+    "name": "android_in_the_wild",
+    "github_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+    "local_cache": "datasets\\android_in_the_wild",
+    "total_episodes": "Unknown (using sample data)",
+    "sample_episodes_available": 5,
+    "status": "Sample data ready"
+  },
+  "sample_videos": [
+    {
+      "id": "episode_001_settings_wifi",
+      "path": "datasets\\android_in_the_wild\\videos\\episode_001_settings_wifi.mp4",
+      "task_description": "Turn WiFi on and off in Android settings",
+      "metadata": {
+        "app_package": "com.android.settings",
+        "device_model": "Pixel 4",
+        "android_version": "11",
+        "screen_resolution": [
+          1080,
+          2340
+        ]
+      }
+    },
+    {
+      "id": "episode_002_camera_photo",
+      "path": "datasets\\android_in_the_wild\\videos\\episode_002_camera_photo.mp4",
+      "task_description": "Create a new alarm in the clock app",
+      "metadata": {
+        "app_package": "com.google.android.deskclock",
+        "device_model": "Pixel 5",
+        "android_version": "12",
+        "screen_resolution": [
+          1080,
+          2340
+        ]
+      }
+    },
+    {
+      "id": "episode_003_contacts_add",
+      "path": "datasets\\android_in_the_wild\\videos\\episode_003_contacts_add.mp4",
+      "task_description": "Search for emails containing 'meeting' in Gmail",
+      "metadata": {
+        "app_package": "com.google.android.gm",
+        "device_model": "Samsung Galaxy S21",
+        "android_version": "11",
+        "screen_resolution": [
+          1440,
+          3200
+        ]
+      }
+    }
+  ],
+  "training_results": {
+    "planner": [
+      

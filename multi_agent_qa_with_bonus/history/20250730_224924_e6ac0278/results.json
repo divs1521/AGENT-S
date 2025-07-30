@@ -1,0 +1,525 @@
+{
+  "episode_id": "e6ac0278-f0bd-4798-b9ed-9e5e180952cf",
+  "success": true,
+  "final_score": 0.9800000000000001,
+  "duration": 52.71311831474304,
+  "executions": [
+    {
+      "success": true,
+      "step_id": 1,
+      "action_taken": "mock_action",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895922.929122
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895930.3944545,
+        "execution_step": 0
+      },
+      "error_message": null,
+      "execution_time": 7.465320587158203,
+      "screenshot_path": null,
+      "subgoal_description": "Open the Settings app from the home screen."
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895930.3945143
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895934.328099,
+        "execution_step": 1
+      },
+      "error_message": null,
+      "execution_time": 3.9335813522338867,
+      "screenshot_path": null,
+      "subgoal_description": "Scroll to locate the 'Network & internet' option in the Settings menu."
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895934.328282
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895937.8161526,
+        "execution_step": 2
+      },
+      "error_message": null,
+      "execution_time": 3.487863779067993,
+      "screenshot_path": null,
+      "subgoal_description": "Tap on the 'Network & internet' option to access network settings."
+    },
+    {
+      "success": true,
+      "step_id": 4,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895937.8162036
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "button",
+            "text": "Home",
+            "bounds": [
+              50,
+              100,
+              150,
+              150
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Knowledge Test App",
+            "bounds": [
+              200,
+              50,
+              600,
+              100
+            ]
+          },
+          {
+            "type": "edittext",
+            "hint": "Enter your question",
+            "bounds": [
+              100,
+              300,
+              900,
+              400
+            ]
+          },
+          {
+            "type": "button",
+            "text": "Submit",
+            "bounds": [
+              400,
+              450,
+              600,
+              500
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895941.8997972,
+        "execution_step": 3
+      },
+      "error_message": null,
+      "execution_time": 4.083590507507324,
+      "screenshot_path": null,
+      "subgoal_description": "Locate the 'WiFi' option on the Network settings screen."
+    },
+    {
+      "success": true,
+      "step_id": 5,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895941.8998506
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895947.662857,
+        "execution_step": 4
+      },
+      "error_message": null,
+      "execution_time": 5.76300311088562,
+      "screenshot_path": null,
+      "subgoal_description": "Tap on the 'WiFi' option to access WiFi settings."
+    },
+    {
+      "success": true,
+      "step_id": 6,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895947.6629093
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895958.4904869,
+        "execution_step": 5
+      },
+      "error_message": null,
+      "execution_time": 10.827573776245117,
+      "screenshot_path": null,
+      "subgoal_description": "Toggle the WiFi switch to turn WiFi on."
+    },
+    {
+      "success": true,
+      "step_id": 7,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895958.4905324
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "button",
+            "text": "Home",
+            "bounds": [
+              50,
+              100,
+              150,
+              150
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Knowledge Test App",
+            "bounds": [
+              200,
+              50,
+              600,
+              100
+            ]
+          },
+          {
+            "type": "edittext",
+            "hint": "Enter your question",
+            "bounds": [
+              100,
+              300,
+              900,
+              400
+            ]
+          },
+          {
+            "type": "button",
+            "text": "Submit",
+            "bounds": [
+              400,
+              450,
+              600,
+              500
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753895964.2648304,
+        "execution_step": 6
+      },
+      "error_message": null,
+      "execution_time": 5.774294137954712,
+      "screenshot_path": null,
+      "subgoal_description": "Toggle the WiFi switch to turn WiFi off."
+    }
+  ],
+  "verifications": [
+    {
+      "success": true,
+      "step_id": 1,
+      "verification_type": "mock_verification",
+      "expected_state": "Settings app opens successfully.",
+      "actual_state": "Mock execution: mock_action",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895930.3945043
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "verification_type": "mock_verification",
+      "expected_state": "'Network & internet' option becomes visible.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895934.3282294
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "verification_type": "mock_verification",
+      "expected_state": "Network settings screen opens.",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895937.8161929
+    },
+    {
+      "success": true,
+      "step_id": 4,
+      "verification_type": "mock_verification",
+      "expected_state": "'WiFi' option becomes visible.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895941.8998394
+    },
+    {
+      "success": true,
+      "step_id": 5,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi settings screen opens.",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895947.6628978
+    },
+    {
+      "success": true,
+      "step_id": 6,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi is turned on.",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895958.4905224
+    },
+    {
+      "success": true,
+      "step_id": 7,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi is turned off.",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753895964.2648685
+    }
+  ],
+  "bugs_detected": [],
+  "plan": {
+    "task_id": "test_wifi_settings_001",
+    "description": "Test the WiFi settings by navigating to the settings menu, locating the WiFi option, and toggling WiFi on and off.",
+    "subgoals": [
+      {
+        "id": 1,
+        "description": "Open the Settings app from the home screen.",
+        "action_type": "tap",
+        "target_element": "Settings app icon",
+        "expected_outcome": "Settings app opens successfully.",
+        "verification_criteria": "Verify that the Settings screen is displayed.",
+        "dependencies": []
+      },
+      {
+        "id": 2,
+        "description": "Scroll to locate the 'Network & internet' option in the Settings menu.",
+        "action_type": "scroll",
+        "target_element": "'Network & internet' option",
+        "expected_outcome": "'Network & internet' option becomes visible.",
+        "verification_criteria": "Verify that the 'Network & internet' option is visible on the screen.",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Tap on the 'Network & internet' option to access network settings.",
+        "action_type": "tap",
+        "target_element": "'Network & internet' option",
+        "expected_outcome": "Network settings screen opens.",
+        "verification_criteria": "Verify that the Network settings screen is displayed.",
+        "dependencies": [
+          2
+        ]
+      },
+      {
+        "id": 4,
+        "description": "Locate the 'WiFi' option on the Network settings screen.",
+        "action_type": "scroll",
+        "target_element": "'WiFi' option",
+        "expected_outcome": "'WiFi' option becomes visible.",
+        "verification_criteria": "Verify that the 'WiFi' option is visible.",
+        "dependencies": [
+          3
+        ]
+      },
+      {
+        "id": 5,
+        "description": "Tap on the 'WiFi' option to access WiFi settings.",
+        "action_type": "tap",
+        "target_element": "'WiFi' option",
+        "expected_outcome": "WiFi settings screen opens.",
+        "verification_criteria": "Verify that the WiFi settings screen is displayed.",
+        "dependencies": [
+          4
+        ]
+      },
+      {
+        "id": 6,
+        "description": "Toggle the WiFi switch to turn WiFi on.",
+        "action_type": "tap",
+        "target_element": "WiFi switch",
+        "expected_outcome": "WiFi is turned on.",
+        "verification_criteria": "Verify that the WiFi switch is in the 'on' position and WiFi is connected.",
+        "dependencies": [
+          5
+        ]
+      },
+      {
+        "id": 7,
+        "description": "Toggle the WiFi switch to turn WiFi off.",
+        "action_type": "tap",
+        "target_element": "WiFi switch",
+        "expected_outcome": "WiFi is turned off.",
+        "verification_criteria": "Verify that the WiFi switch is in the 'off' position and WiFi is disconnected.",
+        "dependencies": [
+          6
+        ]
+      }
+    ],
+    "success_criteria": "The WiFi toggle successfully changes the state from on to off and vice versa, and the UI reflects these changes accurately.",
+    "estimated_steps": 7
+  }
+}

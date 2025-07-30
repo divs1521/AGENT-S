@@ -1,0 +1,289 @@
+[
+  {
+    "timestamp": "2025-07-31T03:13:36.947448",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "Starting QA test episode ac2bff68-ea54-47ce-871b-246c76a2b21e: Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.947734",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[planner] Status: planning (10%) - Analyzing task requirements",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.947899",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "Phase 1: Creating test plan",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.948102",
+    "level": "INFO",
+    "logger": "agents.planner_agent",
+    "message": "Creating plan for task: Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.948573",
+    "level": "INFO",
+    "logger": "agents.planner_agent",
+    "message": "Created plan with 3 subgoals",
+    "agent": "planner"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.948819",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[planner] Status: completed (100%) - Test plan created successfully | Decision: Created 3 step plan: Mock QA task execution",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.949187",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[executor] Status: ready (0%) - Preparing to execute test plan",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.949544",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "Phase 2: Executing test plan with verification",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.949813",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[executor] Status: executing (0%) - Executing step 1: Open application or navigate to relevant section",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.950055",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Executing subgoal 1: Open application or navigate to relevant section",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:36.950687",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Action planned: click with confidence 0.92",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:38.570959",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Execution completed in 1.62s, success: True",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:38.571476",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: verifying (16%) - Verifying step 1",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:38.571694",
+    "level": "INFO",
+    "logger": "agents.verifier_agent",
+    "message": "Verifying execution of step 1: Open application or navigate to relevant section",
+    "agent": "verifier"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:38.571963",
+    "level": "INFO",
+    "logger": "agents.verifier_agent",
+    "message": "Using mock environment verification",
+    "agent": "verifier"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:38.572271",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: ready (26%) - Step 1 verified successfully | Decision: Result: Pass | Confidence: 0.90",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:39.072830",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[executor] Status: executing (33%) - Executing step 2: Locate target information or interface",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:39.073081",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Executing subgoal 2: Locate target information or interface",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:39.073535",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Action planned: click with confidence 0.92",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:40.861894",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Execution completed in 1.79s, success: True",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:40.862458",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: verifying (50%) - Verifying step 2",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:40.862823",
+    "level": "INFO",
+    "logger": "agents.verifier_agent",
+    "message": "Verifying execution of step 2: Locate target information or interface",
+    "agent": "verifier"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:40.863088",
+    "level": "INFO",
+    "logger": "agents.verifier_agent",
+    "message": "Using mock environment verification",
+    "agent": "verifier"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:40.863441",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: ready (60%) - Step 2 verified successfully | Decision: Result: Pass | Confidence: 0.90",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:41.363952",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[executor] Status: executing (66%) - Executing step 3: Interact with interface to complete task",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:41.364296",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Executing subgoal 3: Interact with interface to complete task",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:41.364922",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Action planned: click with confidence 0.92",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.035322",
+    "level": "INFO",
+    "logger": "agents.executor_agent",
+    "message": "Execution completed in 0.67s, success: True",
+    "agent": "executor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.035690",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: verifying (83%) - Verifying step 3",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.035916",
+    "level": "INFO",
+    "logger": "agents.verifier_agent",
+    "message": "Verifying execution of step 3: Interact with interface to complete task",
+    "agent": "verifier"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.036135",
+    "level": "INFO",
+    "logger": "agents.verifier_agent",
+    "message": "Using mock environment verification",
+    "agent": "verifier"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.036457",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: ready (93%) - Step 3 verified successfully | Decision: Result: Pass | Confidence: 0.90",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.537340",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[executor] Status: completed (100%) - Execution completed: 3/3 steps",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.537907",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[verifier] Status: completed (100%) - Verification completed: 3/3 steps",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.538460",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[supervisor] Status: analyzing (90%) - Analyzing test episode",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.538918",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "Phase 4: Analyzing episode with supervisor",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.539188",
+    "level": "INFO",
+    "logger": "agents.supervisor_agent",
+    "message": "Analyzing test episode: ac2bff68-ea54-47ce-871b-246c76a2b21e",
+    "agent": "supervisor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.539966",
+    "level": "INFO",
+    "logger": "agents.supervisor_agent",
+    "message": "Analysis completed. Overall score: N/A",
+    "agent": "supervisor"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.540413",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "[supervisor] Status: completed (100%) - Episode analysis completed | Decision: Coverage: 0.50 | Accuracy: 0.50 | Recovery: 0.50",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.541915",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "Episode summary logged to logs\\episode_ac2bff68-ea54-47ce-871b-246c76a2b21e.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:13:42.542228",
+    "level": "INFO",
+    "logger": "core.orchestrator",
+    "message": "QA test episode completed. Success: True, Score: 0.98",
+    "agent": "system"
+  }
+]

@@ -1,0 +1,270 @@
+{
+  "episode_id": "c69d28a4-fd76-47c5-8335-4942dd852919",
+  "success": true,
+  "final_score": 0.9800000000000001,
+  "duration": 5.826130151748657,
+  "executions": [
+    {
+      "success": true,
+      "step_id": 1,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753912234.2231503
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753912235.9807966,
+        "execution_step": 0
+      },
+      "error_message": null,
+      "execution_time": 1.7576372623443604,
+      "screenshot_path": null,
+      "subgoal_description": "Open application or navigate to relevant section"
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753912236.4825594
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "button",
+            "text": "Home",
+            "bounds": [
+              50,
+              100,
+              150,
+              150
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Knowledge Test App",
+            "bounds": [
+              200,
+              50,
+              600,
+              100
+            ]
+          },
+          {
+            "type": "edittext",
+            "hint": "Enter your question",
+            "bounds": [
+              100,
+              300,
+              900,
+              400
+            ]
+          },
+          {
+            "type": "button",
+            "text": "Submit",
+            "bounds": [
+              400,
+              450,
+              600,
+              500
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753912238.2526615,
+        "execution_step": 1
+      },
+      "error_message": null,
+      "execution_time": 1.7700746059417725,
+      "screenshot_path": null,
+      "subgoal_description": "Locate target information or interface"
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "action_taken": "mock_click",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753912238.7556531
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "button",
+            "text": "Home",
+            "bounds": [
+              50,
+              100,
+              150,
+              150
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Knowledge Test App",
+            "bounds": [
+              200,
+              50,
+              600,
+              100
+            ]
+          },
+          {
+            "type": "edittext",
+            "hint": "Enter your question",
+            "bounds": [
+              100,
+              300,
+              900,
+              400
+            ]
+          },
+          {
+            "type": "button",
+            "text": "Submit",
+            "bounds": [
+              400,
+              450,
+              600,
+              500
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753912239.5444477,
+        "execution_step": 2
+      },
+      "error_message": null,
+      "execution_time": 0.7887916564941406,
+      "screenshot_path": null,
+      "subgoal_description": "Interact with interface to complete task"
+    }
+  ],
+  "verifications": [
+    {
+      "success": true,
+      "step_id": 1,
+      "verification_type": "mock_verification",
+      "expected_state": "Application opens successfully",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753912235.9813602
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "verification_type": "mock_verification",
+      "expected_state": "Search interface becomes visible",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753912238.25346
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "verification_type": "mock_verification",
+      "expected_state": "Task completed successfully",
+      "actual_state": "Mock execution: mock_click",
+      "confidence": 0.9,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753912239.5453842
+    }
+  ],
+  "bugs_detected": [],
+  "plan": {
+    "task_id": "mock_task_001",
+    "description": "Mock QA task execution",
+    "subgoals": [
+      {
+        "id": 1,
+        "description": "Open application or navigate to relevant section",
+        "action_type": "navigate",
+        "target_element": "app_launcher",
+        "expected_outcome": "Application opens successfully",
+        "verification_criteria": null,
+        "dependencies": []
+      },
+      {
+        "id": 2,
+        "description": "Locate target information or interface",
+        "action_type": "tap",
+        "target_element": "search_button",
+        "expected_outcome": "Search interface becomes visible",
+        "verification_criteria": null,
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Interact with interface to complete task",
+        "action_type": "input",
+        "target_element": "search_field",
+        "expected_outcome": "Task completed successfully",
+        "verification_criteria": null,
+        "dependencies": [
+          2
+        ]
+      }
+    ],
+    "success_criteria": "Task completed with all steps executed successfully",
+    "estimated_steps": 3
+  },
+  "supervisor_analysis": {
+    "episode_id": "c69d28a4-fd76-47c5-8335-4942dd852919",
+    "overall_assessment": "Analysis completed",
+    "bug_detection_accuracy": 0.5,
+    "agent_recovery_ability": 0.5,
+    "test_coverage_score": 0.5,
+    "prompt_improvement_suggestions": [],
+    "plan_quality_feedback": [],
+    "execution_quality_feedback": [],
+    "verification_quality_feedback": [],
+    "recommended_test_expansions": [],
+    "critical_issues": [],
+    "strengths": [],
+    "timestamp": 1753912240.0478094
+  }
+}

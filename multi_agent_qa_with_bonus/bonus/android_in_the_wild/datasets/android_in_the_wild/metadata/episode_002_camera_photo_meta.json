@@ -1,0 +1,1 @@
+{"episode_id": "aitw_sample_002", "task_description": "Create a new alarm in the clock app", "app_package": "com.google.android.deskclock", "duration_seconds": 12.8, "num_actions": 4, "device_model": "Pixel 5", "android_version": "12", "screen_resolution": [1080, 2340], "complexity": "easy"}

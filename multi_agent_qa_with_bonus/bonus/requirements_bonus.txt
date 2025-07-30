@@ -1,0 +1,24 @@
+# Bonus Features Requirements
+# Optional packages for enhanced functionality
+
+# Computer Vision and Image Processing (for video analysis)
+opencv-python>=4.5.0
+numpy>=1.21.0
+Pillow>=8.0.0
+
+# Machine Learning and Data Processing (for enhanced training)
+scikit-learn>=1.0.0
+pandas>=1.3.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Video Processing (for android_in_the_wild dataset)
+moviepy>=1.0.3
+imageio>=2.9.0
+
+# Advanced Analytics
+plotly>=5.0.0
+jupyter>=1.0.0
+
+# Note: These are optional dependencies for bonus features only.
+# The core multi-agent QA system works without these packages.

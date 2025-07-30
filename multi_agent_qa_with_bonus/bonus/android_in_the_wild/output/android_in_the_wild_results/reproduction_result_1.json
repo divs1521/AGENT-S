@@ -1,0 +1,17 @@
+{
+  "video": "datasets\\android_in_the_wild\\videos\\episode_001_settings_wifi.mp4",
+  "task": "Test turning Wi-Fi on and verify network list appears",
+  "success": true,
+  "accuracy": 0.0,
+  "robustness": 0.0,
+  "generalization": 0.0,
+  "agent_actions": [],
+  "performance_metrics": {
+    "execution_time": 0.0,
+    "steps_completed": 3,
+    "overall_accuracy": 0.0,
+    "robustness": 0.0,
+    "generalization": 0.0,
+    "success_rate": 1.0
+  }
+}

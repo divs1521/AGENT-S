@@ -1,0 +1,72 @@
+[
+  {
+    "episode_id": "aitw_sample_001",
+    "task_description": "Turn WiFi on and off in Android settings",
+    "app_package": "com.android.settings",
+    "duration_seconds": 15.2,
+    "num_actions": 5,
+    "device_model": "Pixel 4",
+    "android_version": "11",
+    "screen_resolution": [
+      1080,
+      2340
+    ],
+    "complexity": "medium"
+  },
+  {
+    "episode_id": "aitw_sample_002",
+    "task_description": "Create a new alarm in the clock app",
+    "app_package": "com.google.android.deskclock",
+    "duration_seconds": 12.8,
+    "num_actions": 4,
+    "device_model": "Pixel 5",
+    "android_version": "12",
+    "screen_resolution": [
+      1080,
+      2340
+    ],
+    "complexity": "easy"
+  },
+  {
+    "episode_id": "aitw_sample_003",
+    "task_description": "Search for emails containing 'meeting' in Gmail",
+    "app_package": "com.google.android.gm",
+    "duration_seconds": 18.5,
+    "num_actions": 7,
+    "device_model": "Samsung Galaxy S21",
+    "android_version": "11",
+    "screen_resolution": [
+      1440,
+      3200
+    ],
+    "complexity": "hard"
+  },
+  {
+    "episode_id": "aitw_sample_004",
+    "task_description": "Add a new contact with name and phone number",
+    "app_package": "com.android.contacts",
+    "duration_seconds": 14.1,
+    "num_actions": 6,
+    "device_model": "OnePlus 9",
+    "android_version": "12",
+    "screen_resolution": [
+      1080,
+      2400
+    ],
+    "complexity": "medium"
+  },
+  {
+    "episode_id": "aitw_sample_005",
+    "task_description": "Create a calendar event for tomorrow at 2 PM",
+    "app_package": "com.google.android.calendar",
+    "duration_seconds": 22.3,
+    "num_actions": 8,
+    "device_model": "Pixel 6",
+    "android_version": "13",
+    "screen_resolution": [
+      1080,
+      2400
+    ],
+    "complexity": "hard"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "android_in_the_wild",
+  "github_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+  "local_cache": "datasets\\android_in_the_wild",
+  "total_episodes": "Unknown (using sample data)",
+  "sample_episodes_available": 5,
+  "status": "Sample data ready"
+}

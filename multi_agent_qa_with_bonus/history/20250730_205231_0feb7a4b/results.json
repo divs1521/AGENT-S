@@ -1,0 +1,437 @@
+{
+  "episode_id": "0feb7a4b-c284-4517-9f22-4722888a90f1",
+  "success": true,
+  "final_score": 0.9600000000000001,
+  "duration": 117.91913890838623,
+  "executions": [
+    {
+      "success": true,
+      "step_id": 1,
+      "action_taken": "mock_action",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888846.2035668
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888913.704221,
+        "execution_step": 0
+      },
+      "error_message": null,
+      "execution_time": 67.50063586235046,
+      "screenshot_path": null
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888913.7043266
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888919.2848697,
+        "execution_step": 1
+      },
+      "error_message": null,
+      "execution_time": 5.580537557601929,
+      "screenshot_path": null
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888919.284956
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888923.4020898,
+        "execution_step": 2
+      },
+      "error_message": null,
+      "execution_time": 4.117126226425171,
+      "screenshot_path": null
+    },
+    {
+      "success": true,
+      "step_id": 4,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888923.402145
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888928.2306054,
+        "execution_step": 3
+      },
+      "error_message": null,
+      "execution_time": 4.8284571170806885,
+      "screenshot_path": null
+    },
+    {
+      "success": true,
+      "step_id": 5,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888928.2307003
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888935.1598551,
+        "execution_step": 4
+      },
+      "error_message": null,
+      "execution_time": 6.929150104522705,
+      "screenshot_path": null
+    },
+    {
+      "success": true,
+      "step_id": 6,
+      "action_taken": "mock_scroll",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888935.1599114
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888940.2043405,
+        "execution_step": 5
+      },
+      "error_message": null,
+      "execution_time": 5.044426202774048,
+      "screenshot_path": null
+    },
+    {
+      "success": true,
+      "step_id": 7,
+      "action_taken": "mock_navigate_back",
+      "ui_state_before": {
+        "mock": true,
+        "ui_elements": [],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888940.2044399
+      },
+      "ui_state_after": {
+        "mock": true,
+        "ui_elements": [
+          {
+            "type": "textview",
+            "text": "Answer: Paris",
+            "bounds": [
+              100,
+              700,
+              800,
+              750
+            ]
+          },
+          {
+            "type": "textview",
+            "text": "Paris is important because it is the capital and largest city of France...",
+            "bounds": [
+              100,
+              760,
+              900,
+              850
+            ]
+          }
+        ],
+        "screen_size": [
+          1080,
+          1920
+        ],
+        "timestamp": 1753888951.2919443,
+        "execution_step": 6
+      },
+      "error_message": null,
+      "execution_time": 11.087486743927002,
+      "screenshot_path": null
+    }
+  ],
+  "verifications": [
+    {
+      "success": true,
+      "step_id": 1,
+      "verification_type": "mock_verification",
+      "expected_state": "Settings application opens",
+      "actual_state": "Mock execution: mock_action",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888913.7043076
+    },
+    {
+      "success": true,
+      "step_id": 2,
+      "verification_type": "mock_verification",
+      "expected_state": "User can see 'Network & internet' listed",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888919.284933
+    },
+    {
+      "success": true,
+      "step_id": 3,
+      "verification_type": "mock_verification",
+      "expected_state": "'Network & internet' settings are displayed",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888923.402134
+    },
+    {
+      "success": true,
+      "step_id": 4,
+      "verification_type": "mock_verification",
+      "expected_state": "'WiFi' settings are displayed",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888928.2306857
+    },
+    {
+      "success": true,
+      "step_id": 5,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi is turned on",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888935.1598995
+    },
+    {
+      "success": true,
+      "step_id": 6,
+      "verification_type": "mock_verification",
+      "expected_state": "WiFi is turned off",
+      "actual_state": "Mock execution: mock_scroll",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888940.2044203
+    },
+    {
+      "success": true,
+      "step_id": 7,
+      "verification_type": "mock_verification",
+      "expected_state": "Return to the main 'Network & internet' settings",
+      "actual_state": "Mock execution: mock_navigate_back",
+      "confidence": 0.8,
+      "issues_found": [],
+      "suggestions": [
+        "Test behavior verified in mock environment"
+      ],
+      "timestamp": 1753888951.2919986
+    }
+  ],
+  "bugs_detected": [],
+  "plan": {
+    "task_id": "test_wifi_settings_001",
+    "description": "Test the WiFi settings functionality by navigating to the settings menu, locating the WiFi option, and toggling it on and off.",
+    "subgoals": [
+      {
+        "id": 1,
+        "description": "Open the Settings application",
+        "action_type": "tap",
+        "target_element": "Settings app icon on the home screen",
+        "expected_outcome": "Settings application opens",
+        "verification_criteria": "Confirm that the Settings screen is displayed",
+        "dependencies": []
+      },
+      {
+        "id": 2,
+        "description": "Scroll to locate the 'Network & internet' option",
+        "action_type": "scroll",
+        "target_element": "Network & internet option",
+        "expected_outcome": "User can see 'Network & internet' listed",
+        "verification_criteria": "Confirm that the 'Network & internet' option is visible",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Tap on 'Network & internet'",
+        "action_type": "tap",
+        "target_element": "'Network & internet' option",
+        "expected_outcome": "'Network & internet' settings are displayed",
+        "verification_criteria": "Confirm that 'WiFi', 'Mobile network', etc. are visible",
+        "dependencies": [
+          2
+        ]
+      },
+      {
+        "id": 4,
+        "description": "Locate and tap on the 'WiFi' option",
+        "action_type": "tap",
+        "target_element": "'WiFi' option",
+        "expected_outcome": "'WiFi' settings are displayed",
+        "verification_criteria": "Confirm that the WiFi settings screen is shown",
+        "dependencies": [
+          3
+        ]
+      },
+      {
+        "id": 5,
+        "description": "Toggle the WiFi switch to turn it on",
+        "action_type": "tap",
+        "target_element": "WiFi toggle switch",
+        "expected_outcome": "WiFi is turned on",
+        "verification_criteria": "Confirm that the toggle switch is in the 'On' position and WiFi networks are listed",
+        "dependencies": [
+          4
+        ]
+      },
+      {
+        "id": 6,
+        "description": "Toggle the WiFi switch to turn it off",
+        "action_type": "tap",
+        "target_element": "WiFi toggle switch",
+        "expected_outcome": "WiFi is turned off",
+        "verification_criteria": "Confirm that the toggle switch is in the 'Off' position and no networks are listed",
+        "dependencies": [
+          5
+        ]
+      },
+      {
+        "id": 7,
+        "description": "Verify the WiFi status in the main settings screen",
+        "action_type": "navigate",
+        "target_element": "Back button",
+        "expected_outcome": "Return to the main 'Network & internet' settings",
+        "verification_criteria": "Confirm that the WiFi status reflects the current toggle state",
+        "dependencies": [
+          6
+        ]
+      }
+    ],
+    "success_criteria": "WiFi settings can be accessed, and toggling the WiFi on and off works as expected with the correct UI feedback.",
+    "estimated_steps": 7
+  }
+}

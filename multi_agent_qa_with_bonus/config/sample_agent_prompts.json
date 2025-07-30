@@ -1,0 +1,6 @@
+{
+  "planner_system_prompt": "You are an expert QA planning agent...",
+  "executor_system_prompt": "You are an expert executor agent...",
+  "verifier_system_prompt": "You are an expert verification agent...",
+  "supervisor_system_prompt": "You are an expert supervisor agent..."
+}

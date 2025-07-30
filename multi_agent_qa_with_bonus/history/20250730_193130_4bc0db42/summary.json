@@ -1,0 +1,11 @@
+{
+  "episode_id": "4bc0db42-7432-4340-9f04-1d218f5c9d39",
+  "timestamp": "20250730_193130",
+  "task": "Create a new alarm for 7:00 AM with custom label and sound",
+  "success": false,
+  "score": 0.0,
+  "duration": 0.0,
+  "steps_executed": 0,
+  "bugs_found": 0,
+  "folder": "20250730_193130_4bc0db42"
+}

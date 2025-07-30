@@ -1,0 +1,191 @@
+[
+  {
+    "timestamp": "2025-07-31T03:24:17.709978",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/dataset_info.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/dataset_info.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:17.709978",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/dataset_info.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/dataset_info.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:17.709978",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/dataset_info.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/dataset_info.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:17.999605",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/sample_episodes.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/sample_episodes.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:17.999605",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/sample_episodes.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/sample_episodes.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:17.999605",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/sample_episodes.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/sample_episodes.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.288129",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/annotation_schema.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/annotation_schema.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.288129",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/annotation_schema.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/annotation_schema.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.288129",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Optional file not available https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/annotation_schema.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/google-research/google-research/master/android_in_the_wild/annotation_schema.json",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.291504",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_001_settings_wifi",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.291504",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_001_settings_wifi",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.291504",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_001_settings_wifi",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.292946",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_002_camera_photo",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.292946",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_002_camera_photo",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.292946",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_002_camera_photo",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.295687",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_003_contacts_add",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.295687",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_003_contacts_add",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.295687",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_003_contacts_add",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.306967",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_001_settings_wifi",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.306967",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_001_settings_wifi",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.306967",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_001_settings_wifi",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.309298",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_002_camera_photo",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.309298",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_002_camera_photo",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.309298",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_002_camera_photo",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.310977",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_003_contacts_add",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.310977",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_003_contacts_add",
+    "agent": "system"
+  },
+  {
+    "timestamp": "2025-07-31T03:24:18.310977",
+    "level": "WARNING",
+    "logger": "bonus.android_in_the_wild.dataset_processor",
+    "message": "Created mock episode for: episode_003_contacts_add",
+    "agent": "system"
+  }
+]

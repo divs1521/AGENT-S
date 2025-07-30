@@ -1,0 +1,11 @@
+{
+  "episode_id": "1d906856-cadd-4305-aac0-41bed4cfe3db",
+  "timestamp": "20250730_225623",
+  "task": "create alarm",
+  "success": true,
+  "score": 0.9800000000000001,
+  "duration": 37.473713874816895,
+  "steps_executed": 7,
+  "bugs_found": 0,
+  "folder": "20250730_225623_1d906856"
+}

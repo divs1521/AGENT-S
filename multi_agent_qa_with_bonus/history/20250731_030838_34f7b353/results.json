@@ -1,0 +1,259 @@
+{
+  "success": true,
+  "dataset_stats": {
+    "name": "android_in_the_wild",
+    "github_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+    "local_cache": "datasets\\android_in_the_wild",
+    "total_episodes": "Unknown (using sample data)",
+    "sample_episodes_available": 5,
+    "status": "Sample data ready"
+  },
+  "sample_videos": [
+    {
+      "id": "episode_001_settings_wifi",
+      "path": "datasets\\android_in_the_wild\\videos\\episode_001_settings_wifi.mp4",
+      "task_description": "Turn WiFi on and off in Android settings",
+      "metadata": {
+        "app_package": "com.android.settings",
+        "device_model": "Pixel 4",
+        "android_version": "11",
+        "screen_resolution": [
+          1080,
+          2340
+        ]
+      }
+    },
+    {
+      "id": "episode_002_camera_photo",
+      "path": "datasets\\android_in_the_wild\\videos\\episode_002_camera_photo.mp4",
+      "task_description": "Create a new alarm in the clock app",
+      "metadata": {
+        "app_package": "com.google.android.deskclock",
+        "device_model": "Pixel 5",
+        "android_version": "12",
+        "screen_resolution": [
+          1080,
+          2340
+        ]
+      }
+    },
+    {
+      "id": "episode_003_contacts_add",
+      "path": "datasets\\android_in_the_wild\\videos\\episode_003_contacts_add.mp4",
+      "task_description": "Search for emails containing 'meeting' in Gmail",
+      "metadata": {
+        "app_package": "com.google.android.gm",
+        "device_model": "Samsung Galaxy S21",
+        "android_version": "11",
+        "screen_resolution": [
+          1440,
+          3200
+        ]
+      }
+    }
+  ],
+  "training_results": {
+    "planner": [
+      {
+        "episode_id": "episode_001_settings_wifi",
+        "agent_type": "planner",
+        "difficulty": "easy",
+        "input_summary": "{'task_description': 'Test turning Wi-Fi on and verify network list appears', 'app_context': 'com.an...",
+        "target_summary": "{'action_sequence': [{'type': 'touch', 'element_id': 'wifi_toggle', 'coordinates': [150, 225], 'time...",
+        "metadata": {
+          "duration": 30.0,
+          "resolution": "1080x1920",
+          "app_package": "com.android.settings",
+          "device_model": "Pixel 6",
+          "android_version": "12"
+        }
+      },
+      {
+        "episode_id": "episode_002_camera_photo",
+        "agent_type": "planner",
+        "difficulty": "easy",
+        "input_summary": "{'task_description': 'Test turning Wi-Fi on and verify network list appears', 'app_context': 'com.an...",
+        "target_summary": "{'action_sequence': [{'type': 'touch', 'element_id': 'wifi_toggle', 'coordinates': [150, 225], 'time...",
+        "metadata": {
+          "duration": 30.0,
+          "resolution": "1080x1920",
+          "app_package": "com.android.settings",
+          "device_model": "Pixel 6",
+          "android_version": "12"
+        }
+      },
+      {
+        "episode_id": "episode_003_contacts_add",
+        "agent_type": "planner",
+        "difficulty": "easy",
+        "input_summary": "{'task_description': 'Test turning Wi-Fi on and verify network list appears', 'app_context': 'com.an...",
+        "target_summary": "{'action_sequence': [{'type': 'touch', 'element_id': 'wifi_toggle', 'coordinates': [150, 225], 'time...",
+        "metadata": {
+          "duration": 30.0,
+          "resolution": "1080x1920",
+          "app_package": "com.android.settings",
+          "device_model": "Pixel 6",
+          "android_version": "12"
+        }
+      }
+    ],
+    "executor": [
+      {
+        "episode_id": "episode_001_settings_wifi",
+        "agent_type": "executor",
+        "difficulty": "medium",
+        "input_summary": "{'ui_screenshot': 'frame_25.png', 'target_element': 'wifi_toggle', 'task_context': 'Test turning Wi-...",
+        "target_summary": "{'gesture_type': 'touch', 'start_coordinates': [150, 225], 'end_coordinates': None, 'duration': 0, '...",
+        "metadata": {
+          "device_type": "Pixel 6",
+          "screen_density": "hdpi",
+          "layout_variation": "default"
+        }
+      },
+      {
+        "episode_id": "episode_002_camera_photo",
+        "agent_type": "executor",
+        "difficulty": "medium",
+        "input_summary": "{'ui_screenshot': 'frame_25.png', 'target_element': 'wifi_toggle', 'task_context': 'Test turning Wi-...",
+        "target_summary": "{'gesture_type': 'touch', 'start_coordinates': [150, 225], 'end_coordinates': None, 'duration': 0, '...",
+        "metadata": {
+          "device_type": "Pixel 6",
+          "screen_density": "hdpi",
+          "layout_variation": "default"
+        }
+      },
+      {
+        "episode_id": "episode_003_contacts_add",
+        "agent_type": "executor",
+        "difficulty": "medium",
+        "input_summary": "{'ui_screenshot': 'frame_25.png', 'target_element': 'wifi_toggle', 'task_context': 'Test turning Wi-...",
+        "target_summary": "{'gesture_type': 'touch', 'start_coordinates': [150, 225], 'end_coordinates': None, 'duration': 0, '...",
+        "metadata": {
+          "device_type": "Pixel 6",
+          "screen_density": "hdpi",
+          "layout_variation": "default"
+        }
+      }
+    ],
+    "verifier": [
+      {
+        "episode_id": "episode_001_settings_wifi",
+        "agent_type": "verifier",
+        "difficulty": "medium",
+        "input_summary": "{'previous_action': None, 'current_action': {'type': 'touch', 'element_id': 'wifi_toggle', 'coordina...",
+        "target_summary": "{'label': 'expected', 'confidence': 1.0, 'reasoning': 'Normal user action with expected UI transitio...",
+        "metadata": {
+          "example_type": "positive",
+          "flow_type": "sequential"
+        }
+      },
+      {
+        "episode_id": "episode_001_settings_wifi",
+        "agent_type": "verifier",
+        "difficulty": "hard",
+        "input_summary": "{'previous_action': None, 'current_action': {'type': 'touch', 'element_id': 'wrong_element_id', 'coo...",
+        "target_summary": "{'label': 'anomalous', 'confidence': 1.0, 'reasoning': 'Action targets incorrect UI element'}...",
+        "metadata": {
+          "example_type": "negative",
+          "anomaly_type": "wrong_target"
+        }
+      },
+      {
+        "episode_id": "episode_002_camera_photo",
+        "agent_type": "verifier",
+        "difficulty": "medium",
+        "input_summary": "{'previous_action': None, 'current_action': {'type': 'touch', 'element_id': 'wifi_toggle', 'coordina...",
+        "target_summary": "{'label': 'expected', 'confidence': 1.0, 'reasoning': 'Normal user action with expected UI transitio...",
+        "metadata": {
+          "example_type": "positive",
+          "flow_type": "sequential"
+        }
+      },
+      {
+        "episode_id": "episode_002_camera_photo",
+        "agent_type": "verifier",
+        "difficulty": "hard",
+        "input_summary": "{'previous_action': None, 'current_action': {'type': 'touch', 'element_id': 'wrong_element_id', 'coo...",
+        "target_summary": "{'label': 'anomalous', 'confidence': 1.0, 'reasoning': 'Action targets incorrect UI element'}...",
+        "metadata": {
+          "example_type": "negative",
+          "anomaly_type": "wrong_target"
+        }
+      },
+      {
+        "episode_id": "episode_003_contacts_add",
+        "agent_type": "verifier",
+        "difficulty": "medium",
+        "input_summary": "{'previous_action': None, 'current_action': {'type': 'touch', 'element_id': 'wifi_toggle', 'coordina...",
+        "target_summary": "{'label': 'expected', 'confidence': 1.0, 'reasoning': 'Normal user action with expected UI transitio...",
+        "metadata": {
+          "example_type": "positive",
+          "flow_type": "sequential"
+        }
+      },
+      {
+        "episode_id": "episode_003_contacts_add",
+        "agent_type": "verifier",
+        "difficulty": "hard",
+        "input_summary": "{'previous_action': None, 'current_action': {'type': 'touch', 'element_id': 'wrong_element_id', 'coo...",
+        "target_summary": "{'label': 'anomalous', 'confidence': 1.0, 'reasoning': 'Action targets incorrect UI element'}...",
+        "metadata": {
+          "example_type": "negative",
+          "anomaly_type": "wrong_target"
+        }
+      }
+    ],
+    "supervisor": [
+      {
+        "episode_id": "episode_001_settings_wifi",
+        "agent_type": "supervisor",
+        "difficulty": "hard",
+        "input_summary": "{'video_path': 'datasets\\\\android_in_the_wild\\\\videos\\\\episode_001_settings_wifi.mp4', 'ui_sequence'...",
+        "target_summary": "{'generated_task': 'Test turning Wi-Fi on and verify network list appears', 'confidence': 0.9, 'task...",
+        "metadata": {
+          "training_type": "task_generation",
+          "video_duration": 30.0
+        }
+      },
+      {
+        "episode_id": "episode_002_camera_photo",
+        "agent_type": "supervisor",
+        "difficulty": "hard",
+        "input_summary": "{'video_path': 'datasets\\\\android_in_the_wild\\\\videos\\\\episode_002_camera_photo.mp4', 'ui_sequence':...",
+        "target_summary": "{'generated_task': 'Test turning Wi-Fi on and verify network list appears', 'confidence': 0.9, 'task...",
+        "metadata": {
+          "training_type": "task_generation",
+          "video_duration": 30.0
+        }
+      },
+      {
+        "episode_id": "episode_003_contacts_add",
+        "agent_type": "supervisor",
+        "difficulty": "hard",
+        "input_summary": "{'video_path': 'datasets\\\\android_in_the_wild\\\\videos\\\\episode_003_contacts_add.mp4', 'ui_sequence':...",
+        "target_summary": "{'generated_task': 'Test turning Wi-Fi on and verify network list appears', 'confidence': 0.9, 'task...",
+        "metadata": {
+          "training_type": "task_generation",
+          "video_duration": 30.0
+        }
+      }
+    ]
+  },
+  "reproduction_results": {
+    "original_video": "datasets\\android_in_the_wild\\videos\\episode_001_settings_wifi.mp4",
+    "generated_task": "Turn WiFi on and off in Android settings",
+    "agent_actions": [],
+    "execution_success": true,
+    "performance_metrics": {
+      "execution_time": 0.0,
+      "steps_completed": 3,
+      "overall_accuracy": 1.0,
+      "robustness": 0.0,
+      "generalization": 0.0,
+      "success_rate": 1.0
+    },
+    "comparison_summary": "ComparisonResult(accuracy_score=1.0, robustness_score=0.0, generalization_score=0.0, detailed_metrics={'action_sequence_similarity': 1.0, 'timing_accuracy': 0.85, 'gesture_precision': 0.0, 'ui_state_c..."
+  },
+  "episode_id": "34f7b353-7d0d-439d-9c5d-dae598d2ad45",
+  "timestamp": 1753911518.5139372
+}

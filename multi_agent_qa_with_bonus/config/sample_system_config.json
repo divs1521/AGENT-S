@@ -1,0 +1,50 @@
+{
+  "log_directory": "logs",
+  "output_directory": "output",
+  "screenshot_directory": "screenshots",
+  "config_directory": "config",
+  "android_task": "settings_wifi",
+  "use_mock_environment": true,
+  "android_world_config": {},
+  "planner_config": {
+    "engine_params": {
+      "engine_type": "openai",
+      "model": "gpt-4o",
+      "temperature": 0.7
+    },
+    "max_retries": 3,
+    "timeout": 30.0,
+    "enable_logging": true,
+    "custom_prompts": {}
+  },
+  "executor_config": {
+    "engine_params": {},
+    "max_retries": 3,
+    "timeout": 30.0,
+    "enable_logging": true,
+    "custom_prompts": {}
+  },
+  "verifier_config": {
+    "engine_params": {},
+    "max_retries": 3,
+    "timeout": 30.0,
+    "enable_logging": true,
+    "custom_prompts": {}
+  },
+  "supervisor_config": {
+    "engine_params": {},
+    "max_retries": 3,
+    "timeout": 30.0,
+    "enable_logging": true,
+    "custom_prompts": {}
+  },
+  "test_config": {
+    "max_execution_time": 300.0,
+    "max_steps_per_test": 50,
+    "screenshot_enabled": true,
+    "recovery_enabled": true,
+    "verification_strictness": "balanced",
+    "parallel_execution": false,
+    "retry_failed_tests": true
+  }
+}

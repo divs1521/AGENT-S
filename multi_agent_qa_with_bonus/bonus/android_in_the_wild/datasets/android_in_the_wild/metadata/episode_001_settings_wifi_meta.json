@@ -1,0 +1,1 @@
+{"episode_id": "aitw_sample_001", "task_description": "Turn WiFi on and off in Android settings", "app_package": "com.android.settings", "duration_seconds": 15.2, "num_actions": 5, "device_model": "Pixel 4", "android_version": "11", "screen_resolution": [1080, 2340], "complexity": "medium"}

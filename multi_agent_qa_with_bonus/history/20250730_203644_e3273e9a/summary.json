@@ -1,0 +1,11 @@
+{
+  "episode_id": "e3273e9a-dc64-461d-9307-ec784c50ffd3",
+  "timestamp": "20250730_203644",
+  "task": "Test WiFi settings - navigate to settings, find WiFi option, and toggle WiFi on/off",
+  "success": false,
+  "score": 0.42000000000000004,
+  "duration": 200.8820948600769,
+  "steps_executed": 7,
+  "bugs_found": 0,
+  "folder": "20250730_203644_e3273e9a"
+}
